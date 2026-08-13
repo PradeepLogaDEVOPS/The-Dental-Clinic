@@ -33,7 +33,7 @@ export function App() {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-clinic-bg text-clinic-dark font-body flex flex-col selection:bg-secondary/20 selection:text-primary relative">
+    <div className="min-h-screen bg-white text-[#241C18] font-body flex flex-col selection:bg-[#B89B67]/20 selection:text-[#2B211B] relative">
       <SEOHead />
 
       {/* Navigation */}
@@ -85,11 +85,11 @@ export function App() {
         {/* Quick Booking Button */}
         <button
           onClick={() => handleOpenBooking()}
-          className="bg-primary hover:bg-primary-dark text-white p-3.5 rounded-full shadow-2xl transition-all transform hover:scale-110 flex items-center justify-center border-2 border-white"
+          className="bg-[#2B211B] hover:bg-[#4A3025] text-white p-3.5 rounded-full shadow-2xl transition-all transform hover:scale-110 flex items-center justify-center border-2 border-white"
           aria-label="Book Appointment"
           title="Book Appointment"
         >
-          <Calendar className="w-6 h-6 text-secondary" />
+          <Calendar className="w-6 h-6 text-[#D4BC8A]" />
         </button>
 
         {/* Floating WhatsApp Chat */}
