@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Award, Target, Eye, Heart, Calendar, ChevronRight, ChevronLeft } from 'lucide-react';
 import { CLINIC_INFO, TIMELINE_DATA } from '../data/clinicData';
 import { SEOHead } from '../components/SEOHead';
+import clinicLogo from '../assets/logo.png';
 
 interface AboutUsProps {
   onOpenBooking: () => void;
@@ -18,17 +19,37 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
         description="Discover the 80+ year healthcare legacy of The Dental Clinics Chennai. Founded in 1945 by Dr. V. M. Nair, R.M.P., spanning 4 generations of ethical family dentistry."
       />
 
-      {/* PAGE HEADER HERO */}
-      <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
+      {/* PAGE HEADER / LEGACY HERO BANNER */}
+      <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-14 px-4 sm:px-6 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center space-y-5 relative z-10 flex flex-col items-center">
+          
+          {/* Logo Card Container (Clean 250px x 120px rounded-20px white card) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-[20px] p-3 sm:p-4 shadow-2xl border border-white/20 flex items-center justify-center w-[210px] sm:w-[250px] h-[100px] sm:h-[120px] shrink-0"
+          >
+            <img
+              src={clinicLogo}
+              alt="The Dental Clinics"
+              className="w-full h-full object-contain object-center block"
+              style={{ imageRendering: 'crisp-edges' }}
+            />
+          </motion.div>
+
+          {/* Legacy Badges */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/30 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             <ShieldCheck className="w-4 h-4 text-secondary" /> Est. 1945 • 80+ Years Healthcare Legacy
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold">
-            About Our Institution
+
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight">
+            Our Family Legacy & Heritage
           </h1>
+
+          {/* Established Paragraph */}
           <p className="text-primary-100 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Four generations of healthcare excellence, compassionate patient care, and ethical dentistry in Chennai.
+            For over eight decades, our family has been dedicated to providing compassionate, ethical, and patient-centered healthcare across generations in Chennai.
           </p>
         </div>
       </section>
