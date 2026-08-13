@@ -16,7 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -35,14 +35,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
   const handleNavClick = (id: string) => {
     setActiveTab(id);
     setMobileMenuOpen(false);
+    setBranchDropdown(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full font-body">
+    <header className="sticky top-0 z-40 w-full font-body bg-white">
       {/* Top Info Bar */}
       <div className="bg-primary text-white text-xs py-2 px-4 border-b border-primary-light/20 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-[1280px] mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-primary-100">
               <Clock className="w-3.5 h-3.5 text-secondary" /> Mon - Sat: 9:00 AM - 9:00 PM
@@ -72,30 +73,32 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
         </div>
       </div>
 
-      {/* Main Glass Navigation Bar */}
+      {/* Main Navigation Header (Clean 3-part flex layout) */}
       <nav
         className={`w-full transition-all duration-300 ${
-          isScrolled ? 'glass-nav shadow-lg py-3' : 'bg-white py-4 border-b border-clinic-border'
+          isScrolled ? 'glass-nav shadow-lg py-2' : 'bg-white py-3 border-b border-clinic-border'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-          {/* Logo */}
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+          
+          {/* 1. LEFT: Logo */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="text-left focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg p-1"
+            className="text-left focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg p-0.5 shrink-0 flex items-center"
+            aria-label="The Dental Clinics Home"
           >
             <Logo />
           </button>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-7">
+          {/* 2. CENTER / RIGHT: Navigation Items (Desktop & Wide Screen) */}
+          <div className="hidden xl:flex items-center gap-5 xl:gap-7 shrink-0">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-sm font-medium transition-all relative py-1 ${
+                className={`text-sm font-medium transition-all relative py-1.5 whitespace-nowrap shrink-0 ${
                   activeTab === item.id
-                    ? 'text-primary font-semibold'
+                    ? 'text-primary font-bold'
                     : 'text-clinic-dark hover:text-primary'
                 }`}
               >
@@ -107,12 +110,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
             ))}
 
             {/* Quick Branches Dropdown */}
-            <div className="relative">
+            <div className="relative shrink-0">
               <button
                 onClick={() => setBranchDropdown(!branchDropdown)}
-                className="flex items-center gap-1 text-xs font-semibold text-primary bg-primary-50 hover:bg-primary-100 px-3 py-1.5 rounded-full transition-colors border border-primary-100"
+                className="flex items-center gap-1.5 text-xs font-bold text-primary bg-primary-50 hover:bg-primary-100 px-3.5 py-1.5 rounded-full transition-colors border border-primary-100 whitespace-nowrap"
               >
-                <MapPin className="w-3 h-3 text-secondary" /> 3 Branches <ChevronDown className="w-3 h-3" />
+                <MapPin className="w-3.5 h-3.5 text-secondary" /> 3 Branches <ChevronDown className="w-3.5 h-3.5" />
               </button>
 
               {branchDropdown && (
@@ -138,29 +141,30 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
             </div>
           </div>
 
-          {/* CTA & Mobile Controls */}
-          <div className="flex items-center gap-3">
+          {/* 3. RIGHT: CTA Button & Mobile Controls */}
+          <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => onOpenBooking()}
-              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold text-xs uppercase tracking-wider py-2.5 px-5 rounded-full shadow-md hover:shadow-glow transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-bold text-xs uppercase tracking-wider py-3 px-6 rounded-full shadow-md hover:shadow-glow transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
             >
               Book Appointment
             </button>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile / Tablet Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-clinic-dark hover:bg-clinic-section transition-colors"
+              className="xl:hidden p-2.5 rounded-xl text-clinic-dark hover:bg-clinic-section transition-colors shrink-0"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6.5 h-6.5" /> : <Menu className="w-6.5 h-6.5" />}
             </button>
           </div>
+
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile / Tablet Drawer Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-clinic-border px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200">
+          <div className="xl:hidden bg-white border-b border-clinic-border px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200 shadow-xl">
             <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <button
