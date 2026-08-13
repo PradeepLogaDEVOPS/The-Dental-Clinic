@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200" width="650" height="200">
+import fs from 'fs';
+
+const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200" width="650" height="200">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&amp;family=Poppins:wght@700&amp;display=swap');
@@ -69,4 +71,11 @@
     <!-- Teal Dynamic Underline Vector Path -->
     <path d="M 0,132 C 130,142 280,140 425,130" fill="none" stroke="url(#tealGrad)" stroke-width="5" stroke-linecap="round"/>
   </g>
-</svg>
+</svg>`;
+
+const srcSvgPath = 'C:/Users/pradeep/.gemini/antigravity/scratch/the-dental-clinics/src/assets/logo.svg';
+const publicSvgPath = 'C:/Users/pradeep/.gemini/antigravity/scratch/the-dental-clinics/public/logo.svg';
+
+fs.writeFileSync(srcSvgPath, svgContent);
+fs.writeFileSync(publicSvgPath, svgContent);
+console.log('Vector logo.svg written successfully!');
