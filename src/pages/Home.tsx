@@ -5,7 +5,7 @@ import {
   Star, MapPin, ArrowRight, Sparkles, CheckCircle2
 } from 'lucide-react';
 import { 
-  CLINIC_INFO, TIMELINE_DATA, DOCTORS_DATA, TREATMENTS_DATA, 
+  CLINIC_INFO, DOCTORS_DATA, TREATMENTS_DATA, 
   WHY_CHOOSE_US, TESTIMONIALS_DATA, GALLERY_DATA 
 } from '../data/clinicData';
 
@@ -204,57 +204,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 3. LEGACY TIMELINE PREVIEW */}
-      <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-secondary">
-            Multi-Generational Journey
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-clinic-dark">
-            Our 80-Year Healthcare Legacy
-          </h2>
-          <p className="text-clinic-grey text-sm">
-            Strictly preserving our lineage from 1945 to present day.
-          </p>
-        </div>
-
-        <div className="relative">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary-100 transform -translate-x-1/2" />
-
-          <div className="space-y-8 relative">
-            {TIMELINE_DATA.map((event, idx) => (
-              <motion.div
-                key={event.year}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={`flex flex-col md:flex-row items-center gap-6 ${
-                  idx % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
-              >
-                <div className="w-full md:w-1/2 p-6 bg-white rounded-2xl shadow-sm border border-clinic-border hover:shadow-md transition-shadow space-y-2">
-                  <div className="inline-block px-3 py-1 bg-primary-50 text-primary font-bold text-xs rounded-full">
-                    {event.year}
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-clinic-dark">{event.doctorName}</h3>
-                  {event.subtitle && (
-                    <p className="text-xs font-semibold text-secondary">{event.subtitle}</p>
-                  )}
-                  <p className="text-xs sm:text-sm text-clinic-grey leading-relaxed">{event.description}</p>
-                </div>
-
-                <div className="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center shadow-md shrink-0 z-10 border-4 border-white text-xs">
-                  {idx + 1}
-                </div>
-
-                <div className="hidden md:block w-1/2" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. DOCTORS PREVIEW */}
+      {/* 3. DOCTORS PREVIEW */}
       <section className="bg-clinic-section py-16 border-y border-clinic-border">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -323,7 +273,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 5. TREATMENTS PREVIEW */}
+      {/* 4. TREATMENTS PREVIEW */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
           <span className="text-xs font-bold uppercase tracking-wider text-secondary">
@@ -388,7 +338,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 6. WHY CHOOSE US */}
+      {/* 5. WHY CHOOSE US */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
@@ -420,7 +370,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS CAROUSEL */}
+      {/* 6. TESTIMONIALS CAROUSEL */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-clinic-section rounded-3xl p-8 sm:p-12 border border-clinic-border space-y-8">
           <div className="text-center max-w-xl mx-auto space-y-2">
@@ -469,7 +419,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 8. GALLERY PREVIEW */}
+      {/* 7. GALLERY PREVIEW */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div>
@@ -528,7 +478,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         )}
       </section>
 
-      {/* 9. APPOINTMENT CTA BANNER */}
+      {/* 8. APPOINTMENT CTA BANNER */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-primary via-primary-dark to-[#0B3A63] text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 relative overflow-hidden shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-3 relative z-10">
