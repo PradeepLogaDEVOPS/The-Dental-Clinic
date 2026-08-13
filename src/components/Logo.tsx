@@ -13,23 +13,23 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`inline-flex items-center justify-center select-none ${className}`}>
       {lightMode ? (
-        <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl border border-white/20 shadow-md flex items-center justify-center transition-all hover:bg-white w-[180px] sm:w-[200px] h-[70px] sm:h-[80px]">
+        /* Footer logo: clean white container for contrast against dark blue footer without excessive double box */
+        <div className="bg-white px-3 py-1.5 rounded-xl border border-white/20 shadow-sm flex items-center justify-center">
           <img
             src={clinicLogo}
             alt="The Dental Clinics"
-            className="w-full h-full object-contain object-center block"
+            className="w-[180px] sm:w-[210px] md:w-[230px] h-auto object-contain object-center block"
             style={{ imageRendering: 'crisp-edges' }}
           />
         </div>
       ) : (
-        <div className="w-[170px] sm:w-[190px] md:w-[210px] h-[65px] sm:h-[75px] md:h-[82px] flex items-center justify-center">
-          <img
-            src={clinicLogo}
-            alt="The Dental Clinics"
-            className="w-full h-full object-contain object-center block hover:opacity-95 transition-opacity"
-            style={{ imageRendering: 'crisp-edges' }}
-          />
-        </div>
+        /* Header / General logo: direct 230px desktop logo image */
+        <img
+          src={clinicLogo}
+          alt="The Dental Clinics"
+          className="w-[170px] sm:w-[200px] md:w-[230px] h-auto object-contain object-center block"
+          style={{ imageRendering: 'crisp-edges' }}
+        />
       )}
     </div>
   );

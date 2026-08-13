@@ -8,28 +8,25 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2B211B', // Dark Espresso
-          dark: '#1E1713',
-          light: '#4A3025',   // Primary Brown
-          50: '#FAF8F3',      // Warm Ivory
-          100: '#F3EEE6',     // Cream
+          DEFAULT: '#0F4C81',
+          dark: '#0B3A63',
+          light: '#1E6CB0',
+          50: '#F0F6FB',
+          100: '#E1EDF7',
         },
         secondary: {
-          DEFAULT: '#B89B67', // Champagne Gold
-          dark: '#9A7F4F',
-          light: '#D4BC8A',   // Soft Gold
-          50: '#FAF8F3',
+          DEFAULT: '#17A2B8',
+          dark: '#138496',
+          light: '#36B6CB',
+          50: '#EBF9FC',
         },
         clinic: {
           bg: '#FFFFFF',
-          section: '#FAF8F3', // Warm Ivory
-          cream: '#F3EEE6',   // Cream
-          dark: '#241C18',    // Main Text
-          grey: '#75675F',    // Muted Text
-          taupe: '#8B7568',   // Warm Taupe
-          border: '#E6DED5',  // Border Light
-          gold: '#B89B67',    // Champagne Gold
-          softgold: '#D4BC8A'
+          section: '#F8F9FA',
+          dark: '#222222',
+          grey: '#6B7280',
+          border: '#E5E7EB',
+          gold: '#D4AF37',
         }
       },
       fontFamily: {
@@ -37,9 +34,9 @@ export default {
         body: ['Poppins', 'sans-serif'],
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(43, 33, 27, 0.06)',
-        'card-hover': '0 20px 40px -15px rgba(43, 33, 27, 0.1)',
-        'glow': '0 0 25px rgba(184, 155, 103, 0.25)',
+        'glass': '0 8px 32px 0 rgba(15, 76, 129, 0.08)',
+        'card-hover': '0 20px 40px -15px rgba(15, 76, 129, 0.12)',
+        'glow': '0 0 25px rgba(23, 162, 184, 0.35)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

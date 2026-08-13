@@ -21,15 +21,15 @@ export const Gallery: React.FC = () => {
       />
 
       {/* HEADER HERO */}
-      <section className="bg-[#2B211B] text-white py-16 px-4 sm:px-6 text-center space-y-4 border-b border-[#B89B67]/20">
+      <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#4A3025]/60 text-[#D4BC8A] text-xs font-semibold uppercase tracking-wider border border-[#B89B67]/30">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             Advanced Clinical Facilities
           </span>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
             Clinic Ambiance & Transformations
           </h1>
-          <p className="text-[#F3EEE6] text-sm sm:text-base leading-relaxed">
+          <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
             Sterile operatory suites, patient comfort zones, and real clinical results.
           </p>
         </div>
@@ -44,8 +44,8 @@ export const Gallery: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${
                 activeCategory === cat
-                  ? 'bg-[#2B211B] text-white shadow-md'
-                  : 'bg-white text-[#241C18] hover:bg-[#FAF8F3] border border-[#E6DED5]'
+                  ? 'bg-primary text-white shadow-md'
+                  : 'bg-white text-clinic-dark hover:bg-primary-50 border border-clinic-border'
               }`}
             >
               {cat}
@@ -64,16 +64,16 @@ export const Gallery: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onClick={() => setLightboxImg(item.image)}
-              className="group relative rounded-3xl overflow-hidden cursor-pointer h-64 sm:h-72 bg-[#FAF8F3] border border-[#E6DED5] shadow-sm hover:shadow-card-hover transition-all"
+              className="group relative rounded-3xl overflow-hidden cursor-pointer h-64 sm:h-72 bg-clinic-section border border-clinic-border shadow-sm hover:shadow-card-hover transition-all"
             >
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B211B]/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <div>
-                  <span className="text-[10px] text-[#D4BC8A] font-bold uppercase tracking-wider block">
+                  <span className="text-[10px] text-secondary font-bold uppercase tracking-wider block">
                     {item.category}
                   </span>
                   <h3 className="text-base font-heading font-bold text-white mt-0.5">{item.title}</h3>

@@ -99,12 +99,12 @@ The Dental Clinics Website`;
         </div>
       )}
 
-      <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-[#E6DED5] relative max-h-[90vh] overflow-y-auto space-y-6">
+      <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-clinic-border relative max-h-[90vh] overflow-y-auto space-y-6">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-[#75675F] hover:text-[#2B211B] p-2 rounded-full hover:bg-[#FAF8F3] transition-colors"
+          className="absolute top-5 right-5 text-clinic-grey hover:text-clinic-dark p-2 rounded-full hover:bg-clinic-section transition-colors"
           aria-label="Close Modal"
         >
           <X className="w-5 h-5" />
@@ -112,13 +112,13 @@ The Dental Clinics Website`;
 
         {/* Header */}
         <div className="space-y-1">
-          <span className="text-[10px] uppercase font-bold text-[#8B7568] tracking-wider flex items-center gap-1">
-            <Calendar className="w-3.5 h-3.5 text-[#B89B67]" /> Direct Online Booking
+          <span className="text-[10px] uppercase font-bold text-secondary tracking-wider flex items-center gap-1">
+            <Calendar className="w-3.5 h-3.5" /> Direct Online Booking
           </span>
-          <h3 className="text-2xl font-heading font-bold text-[#2B211B]">
+          <h3 className="text-2xl font-heading font-bold text-clinic-dark">
             Book Dental Appointment
           </h3>
-          <p className="text-xs text-[#75675F]">
+          <p className="text-xs text-clinic-grey">
             Select your preferred location, doctor, and treatment to generate an instant WhatsApp booking request.
           </p>
         </div>
@@ -126,7 +126,7 @@ The Dental Clinics Website`;
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+            <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
               Full Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -135,13 +135,13 @@ The Dental Clinics Website`;
               placeholder="e.g. S. Ramanathan"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs focus:outline-none focus:border-[#B89B67]"
+              className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs focus:outline-none focus:border-primary"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+              <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
                 Phone Number <span className="text-red-500">*</span>
               </label>
               <input
@@ -150,12 +150,12 @@ The Dental Clinics Website`;
                 placeholder="+91 98765 43210"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs focus:outline-none focus:border-[#B89B67]"
+                className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs focus:outline-none focus:border-primary"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+              <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
                 Email Address
               </label>
               <input
@@ -163,19 +163,19 @@ The Dental Clinics Website`;
                 placeholder="name@domain.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs focus:outline-none focus:border-[#B89B67]"
+                className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs focus:outline-none focus:border-primary"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+            <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
               Preferred Clinic Branch
             </label>
             <select
               value={formData.branch}
               onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs bg-white focus:outline-none focus:border-[#B89B67]"
+              className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs bg-white focus:outline-none focus:border-primary"
             >
               {BRANCHES_DATA.map((b) => (
                 <option key={b.id} value={b.name}>{b.name}</option>
@@ -184,13 +184,13 @@ The Dental Clinics Website`;
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+            <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
               Treatment Required
             </label>
             <select
               value={formData.treatment}
               onChange={(e) => setFormData({ ...formData, treatment: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs bg-white focus:outline-none focus:border-[#B89B67]"
+              className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs bg-white focus:outline-none focus:border-primary"
             >
               {TREATMENTS_DATA.map((t) => (
                 <option key={t.id} value={t.title}>{t.title}</option>
@@ -199,13 +199,13 @@ The Dental Clinics Website`;
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+            <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
               Preferred Doctor
             </label>
             <select
               value={formData.doctor}
               onChange={(e) => setFormData({ ...formData, doctor: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs bg-white focus:outline-none focus:border-[#B89B67]"
+              className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs bg-white focus:outline-none focus:border-primary"
             >
               {DOCTORS_DATA.map((d) => (
                 <option key={d.id} value={d.name}>{d.name} ({d.role})</option>
@@ -214,7 +214,7 @@ The Dental Clinics Website`;
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#241C18] uppercase mb-1">
+            <label className="block text-xs font-semibold text-clinic-dark uppercase mb-1">
               Message or Specific Requests
             </label>
             <textarea
@@ -222,16 +222,16 @@ The Dental Clinics Website`;
               placeholder="e.g. Prefer evening time slot after 5:00 PM..."
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#E6DED5] text-xs focus:outline-none focus:border-[#B89B67] resize-none"
+              className="w-full px-4 py-2.5 rounded-xl border border-clinic-border text-xs focus:outline-none focus:border-primary resize-none"
             ></textarea>
           </div>
 
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full bg-[#2B211B] hover:bg-[#4A3025] text-white font-semibold py-3.5 px-6 rounded-2xl shadow-md text-xs sm:text-sm flex items-center justify-center gap-2 transition-transform active:scale-95"
+              className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 px-6 rounded-2xl shadow-md text-xs sm:text-sm flex items-center justify-center gap-2 transition-transform active:scale-95"
             >
-              <Send className="w-4 h-4 text-[#D4BC8A]" /> Confirm & Send WhatsApp Request
+              <Send className="w-4 h-4 text-secondary" /> Confirm & Send WhatsApp Request
             </button>
           </div>
         </form>
