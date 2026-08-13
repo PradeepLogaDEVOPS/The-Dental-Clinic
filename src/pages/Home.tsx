@@ -130,9 +130,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 </div>
 
                 <motion.div
-                  animate={{ y: [0, -8, 0] }}
+                  animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -top-6 -left-6 bg-white text-clinic-dark rounded-2xl p-4 shadow-xl border border-clinic-border hidden sm:flex items-center gap-3 max-w-[220px]"
+                  className="absolute top-4 left-4 bg-white/95 backdrop-blur-md text-clinic-dark rounded-2xl p-3 sm:p-4 shadow-xl border border-clinic-border hidden sm:flex items-center gap-3 max-w-[220px] z-10"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary shrink-0">
                     <Award className="w-6 h-6 text-secondary" />
@@ -144,9 +144,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 </motion.div>
 
                 <motion.div
-                  animate={{ y: [0, 8, 0] }}
+                  animate={{ y: [0, 6, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -bottom-6 -right-6 bg-white text-clinic-dark rounded-2xl p-4 shadow-xl border border-clinic-border hidden sm:flex items-center gap-3"
+                  className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md text-clinic-dark rounded-2xl p-3 sm:p-4 shadow-xl border border-clinic-border hidden sm:flex items-center gap-3 z-10"
                 >
                   <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
                     <MapPin className="w-6 h-6" />

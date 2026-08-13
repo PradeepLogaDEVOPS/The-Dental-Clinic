@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Award, Target, Eye, Heart, Calendar, ChevronRight, ChevronLeft } from 'lucide-react';
 import { CLINIC_INFO, TIMELINE_DATA } from '../data/clinicData';
 import { SEOHead } from '../components/SEOHead';
-import clinicLogo from '../assets/logo.svg';
+import clinicLogo from '../assets/logo.png';
 
 interface AboutUsProps {
   onOpenBooking: () => void;

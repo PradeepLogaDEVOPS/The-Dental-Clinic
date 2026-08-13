@@ -40,63 +40,63 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full font-body">
-      {/* Top Info Bar */}
-      <div className="bg-primary text-white text-xs py-2 px-4 border-b border-primary-light/20 hidden md:block">
-        <div className="max-w-[1280px] mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-primary-100">
-              <Clock className="w-3.5 h-3.5 text-secondary" /> Mon - Sat: 9:00 AM - 9:00 PM
+    <header className="sticky top-0 z-40 w-full font-body bg-white">
+      {/* 1. TOP INFORMATION BAR (RESPONSIVE & NO OVERFLOW) */}
+      <div className="bg-primary text-white text-xs py-2 px-4 border-b border-primary-light/20 hidden md:block w-full overflow-hidden">
+        <div className="max-w-[1280px] mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center gap-4 xl:gap-6 truncate shrink">
+            <span className="flex items-center gap-1.5 text-primary-100 whitespace-nowrap text-[11px] xl:text-xs">
+              <Clock className="w-3.5 h-3.5 text-secondary shrink-0" /> Mon - Sat: 9:00 AM - 9:00 PM
             </span>
-            <span className="flex items-center gap-1.5 text-primary-100">
-              <MapPin className="w-3.5 h-3.5 text-secondary" /> Periyar Nagar • Jawahar Nagar • Thiru Vi Ka Nagar
+            <span className="hidden lg:flex items-center gap-1.5 text-primary-100 whitespace-nowrap text-[11px] xl:text-xs">
+              <MapPin className="w-3.5 h-3.5 text-secondary shrink-0" /> Periyar Nagar • Jawahar Nagar • Thiru Vi Ka Nagar
             </span>
           </div>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 xl:gap-5 shrink-0">
             <a
               href={`tel:${CLINIC_INFO.emergencyPhone}`}
-              className="flex items-center gap-1.5 text-white font-medium hover:text-secondary transition-colors"
+              className="flex items-center gap-1.5 text-white font-medium hover:text-secondary transition-colors whitespace-nowrap text-[11px] xl:text-xs"
             >
-              <Phone className="w-3.5 h-3.5 text-secondary" /> Emergency Call: {CLINIC_INFO.emergencyPhone}
+              <Phone className="w-3.5 h-3.5 text-secondary shrink-0" /> Emergency Call: {CLINIC_INFO.emergencyPhone}
             </a>
             <span className="text-primary-light">|</span>
             <a
               href={`https://wa.me/${CLINIC_INFO.whatsappNumber}`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-white font-medium hover:text-[#25D366] transition-colors"
+              className="flex items-center gap-1.5 text-white font-medium hover:text-[#25D366] transition-colors whitespace-nowrap text-[11px] xl:text-xs"
             >
-              <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" /> WhatsApp Chat
+              <MessageSquare className="w-3.5 h-3.5 text-[#25D366] shrink-0" /> WhatsApp Chat
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Glass Navigation Bar */}
+      {/* 2. MAIN NAVIGATION HEADER */}
       <nav
         className={`w-full transition-all duration-300 ${
           isScrolled ? 'glass-nav shadow-lg py-2' : 'bg-white py-3 border-b border-clinic-border'
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4 w-full">
           
-          {/* Logo */}
+          {/* LEFT: Original Logo (No clipping, no wrapper overflow hidden) */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="text-left focus:outline-none rounded-lg p-0.5 shrink-0 flex items-center"
+            className="text-left focus:outline-none rounded-lg shrink-0 flex items-center justify-start p-0 overflow-visible"
             aria-label="The Dental Clinics Home"
           >
             <Logo />
           </button>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden xl:flex items-center gap-5 xl:gap-7 shrink-0">
+          {/* CENTER: Navigation Links (Responsive spacing, zero clipping) */}
+          <div className="hidden lg:flex items-center gap-3 xl:gap-6 shrink-0">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-sm font-medium transition-all relative py-1.5 whitespace-nowrap shrink-0 ${
+                className={`text-xs xl:text-sm font-medium transition-all relative py-1.5 whitespace-nowrap shrink-0 ${
                   activeTab === item.id
                     ? 'text-primary font-bold'
                     : 'text-clinic-dark hover:text-primary'
@@ -109,13 +109,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
               </button>
             ))}
 
-            {/* Quick Branches Dropdown */}
+            {/* "3 Branches" Dropdown Button */}
             <div className="relative shrink-0">
               <button
                 onClick={() => setBranchDropdown(!branchDropdown)}
-                className="flex items-center gap-1.5 text-xs font-bold text-primary bg-primary-50 hover:bg-primary-100 px-3.5 py-1.5 rounded-full transition-colors border border-primary-100 whitespace-nowrap"
+                className="flex items-center gap-1 text-[11px] xl:text-xs font-bold text-primary bg-primary-50 hover:bg-primary-100 px-3 py-1.5 rounded-full transition-colors border border-primary-100 whitespace-nowrap"
               >
-                <MapPin className="w-3.5 h-3.5 text-secondary" /> 3 Branches <ChevronDown className="w-3.5 h-3.5" />
+                <MapPin className="w-3 h-3 text-secondary shrink-0" /> 3 Branches <ChevronDown className="w-3 h-3 shrink-0" />
               </button>
 
               {branchDropdown && (
@@ -141,29 +141,30 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenB
             </div>
           </div>
 
-          {/* CTA & Mobile Controls */}
-          <div className="flex items-center gap-3 shrink-0">
+          {/* RIGHT: CTA Button & Mobile Menu Toggle */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={() => onOpenBooking()}
-              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold text-xs uppercase tracking-wider py-2.5 px-5 rounded-full shadow-md hover:shadow-glow transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
+              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold text-xs uppercase tracking-wider py-2.5 px-4 xl:px-5 rounded-full shadow-md hover:shadow-glow transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
             >
               Book Appointment
             </button>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile / Tablet Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-xl text-clinic-dark hover:bg-clinic-section transition-colors shrink-0"
+              className="lg:hidden p-2 rounded-xl text-clinic-dark hover:bg-clinic-section transition-colors shrink-0"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile / Tablet Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-b border-clinic-border px-4 pt-3 pb-6 space-y-3 shadow-xl animate-in slide-in-from-top duration-200">
+          <div className="lg:hidden bg-white border-b border-clinic-border px-4 pt-3 pb-6 space-y-3 shadow-xl animate-in slide-in-from-top duration-200">
             <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <button
