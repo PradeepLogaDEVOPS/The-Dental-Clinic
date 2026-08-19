@@ -19,16 +19,17 @@ export const Gallery: React.FC = () => {
       <SEOHead
         title="Clinic Gallery & Patient Education | The Dental Clinics Chennai"
         description="Explore clinical facilities, patient education guides, modern equipment, and smile transformations at The Dental Clinics Chennai."
+        canonicalUrl="https://thedentalclinics.in/#gallery"
       />
 
-      {/* HEADER HERO */}
+      {/* HEADER HERO (SEO H1) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             Clinical Gallery & Patient Resources
           </span>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
-            Facilities, Education & Ambiance
+            Clinic Ambiance, Facilities & Patient Resources
           </h1>
           <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
             Sterile operatory suites, patient awareness guides, and clinical excellence in Chennai.
@@ -71,10 +72,11 @@ export const Gallery: React.FC = () => {
               >
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} - Patient Education Resource at The Dental Clinics Chennai`}
                   className={`w-full h-full ${
                     isPoster ? 'object-contain p-2 bg-white' : 'object-cover group-hover:scale-105'
                   } transition-transform duration-500`}
+                  loading="lazy"
                 />
                 
                 {/* Overlay Badge & Hover Effect */}
@@ -88,9 +90,9 @@ export const Gallery: React.FC = () => {
                     <span className="text-[10px] text-secondary font-bold uppercase tracking-wider block">
                       {item.category}
                     </span>
-                    <h3 className="text-sm sm:text-base font-heading font-bold text-white mt-0.5 leading-snug">
+                    <h2 className="text-sm sm:text-base font-heading font-bold text-white mt-0.5 leading-snug">
                       {item.title}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
               </motion.div>
@@ -99,7 +101,7 @@ export const Gallery: React.FC = () => {
         </div>
       </section>
 
-      {/* LIGHTBOX MODAL (HIGH RESOLUTION & Aspect Ratio Preserved) */}
+      {/* LIGHTBOX MODAL */}
       {lightboxImg && (
         <div
           onClick={() => setLightboxImg(null)}
@@ -120,7 +122,7 @@ export const Gallery: React.FC = () => {
               <button
                 onClick={() => setLightboxImg(null)}
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
-                aria-label="Close Preview"
+                aria-label="Close image preview"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -130,7 +132,7 @@ export const Gallery: React.FC = () => {
             <div className="p-3 bg-slate-900 flex items-center justify-center overflow-auto max-h-[75vh]">
               <img
                 src={lightboxImg.src}
-                alt={lightboxImg.title}
+                alt={`${lightboxImg.title} enlarged preview`}
                 className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-lg"
               />
             </div>

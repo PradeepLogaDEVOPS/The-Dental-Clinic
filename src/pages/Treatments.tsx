@@ -25,17 +25,18 @@ export const Treatments: React.FC<TreatmentsProps> = ({ onOpenBooking }) => {
     <div className="space-y-16 pb-16 font-body">
       <SEOHead
         title="Dental Treatments & Services | The Dental Clinics Chennai"
-        description="Comprehensive dental treatments in Chennai: Root Canal, Dental Implants, Braces, Smile Design, Kids Dentistry, Laser Dentistry & Oral Surgery across 3 clinics."
+        description="Explore comprehensive dental treatments in Chennai: Root Canal, Dental Implants, Braces, Smile Design, Kids Dentistry, Laser Dentistry & Oral Surgery across 3 clinics."
+        canonicalUrl="https://thedentalclinics.in/#treatments"
       />
 
-      {/* HEADER HERO */}
+      {/* HEADER HERO (SEO H1) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             <Sparkles className="w-4 h-4 text-secondary" /> Clinical Excellence & Technology
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
-            Dental Treatments & Specialties
+            Comprehensive Dental Treatments & Services in Chennai
           </h1>
           <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
             From routine preventive oral care to complex maxillofacial surgical procedures.
@@ -77,7 +78,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* TREATMENTS GRID */}
+      {/* TREATMENTS GRID (H2 PER TREATMENT) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredTreatments.map((t) => (
@@ -99,7 +100,7 @@ export const Treatments: React.FC<TreatmentsProps> = ({ onOpenBooking }) => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-heading font-bold text-clinic-dark">{t.title}</h3>
+                <h2 className="text-xl font-heading font-bold text-clinic-dark">{t.title}</h2>
                 <p className="text-xs text-clinic-grey leading-relaxed">{t.fullDesc}</p>
 
                 <div className="space-y-2 pt-2 border-t border-clinic-border">

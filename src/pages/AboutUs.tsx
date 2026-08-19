@@ -13,11 +13,12 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
   return (
     <div className="space-y-16 pb-16 font-body">
       <SEOHead
-        title="About Us & Practice History | The Dental Clinics Chennai"
-        description="Discover the history of The Dental Clinics Chennai. Established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician, providing ethical dental care across Chennai."
+        title="About Our Practice | The Dental Clinics Chennai"
+        description="Learn about The Dental Clinics in Chennai. Established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician, providing ethical dental care across Chennai."
+        canonicalUrl="https://thedentalclinics.in/#about"
       />
 
-      {/* PAGE HEADER HERO (BLUE THEME) */}
+      {/* PAGE HEADER HERO (SEO H1) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-14 px-4 sm:px-6 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-5 relative z-10 flex flex-col items-center">
           
@@ -29,7 +30,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
           >
             <img
               src={clinicLogo}
-              alt="The Dental Clinics"
+              alt="The Dental Clinics Official Brand Logo"
               className="w-full h-full object-contain object-center block"
               style={{ imageRendering: 'crisp-edges' }}
             />
@@ -40,9 +41,9 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
             <ShieldCheck className="w-4 h-4 text-secondary" /> Established Dental Practice • Chennai
           </div>
 
-          {/* Title */}
+          {/* Primary SEO H1 */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
-            About Our Practice
+            About Our Practice & Healthcare Lineage
           </h1>
 
           {/* Paragraph */}
@@ -52,7 +53,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* FULL FACTUAL HISTORY NARRATIVE */}
+      {/* FULL FACTUAL HISTORY NARRATIVE (H2) */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +85,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
         </motion.div>
       </section>
 
-      {/* MISSION, VISION & HOLISTIC CARE */}
+      {/* MISSION, VISION & HOLISTIC CARE (H3s) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
@@ -127,9 +128,9 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <div className="bg-gradient-to-r from-primary via-primary-dark to-[#0B3A63] text-white p-8 sm:p-12 rounded-3xl shadow-xl space-y-6">
-          <h3 className="text-2xl sm:text-3xl font-heading font-bold">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold">
             Experience Quality & Ethical Healthcare
-          </h3>
+          </h2>
           <p className="text-primary-100 text-sm max-w-xl mx-auto">
             Book a consultation with our experienced dental surgeons across Periyar Nagar, Jawahar Nagar, and Thiru Vi Ka Nagar.
           </p>

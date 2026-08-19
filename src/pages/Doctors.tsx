@@ -12,18 +12,19 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
   return (
     <div className="space-y-16 pb-16 font-body">
       <SEOHead
-        title="Meet Our Doctors | The Dental Clinics Chennai"
-        description="Meet our distinguished dental surgeons: Dr. G. Madhavan (BDS), Dr. Sanjay Madhavan (MDS Maxillofacial & Implantology), and Dr. Sandra Arun (BDS)."
+        title="Our Dental Surgeons & Specialists | The Dental Clinics Chennai"
+        description="Meet our team of experienced dental surgeons: Dr. G. Madhavan (BDS), Dr. Sanjay Madhavan (MDS Oral & Maxillofacial Surgery), and Dr. Sandra Arun (BDS) in Chennai."
+        canonicalUrl="https://thedentalclinics.in/#doctors"
       />
 
-      {/* HERO HEADER */}
+      {/* HERO HEADER (SEO H1) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             <Stethoscope className="w-4 h-4 text-secondary" /> Dental Surgeons & Specialists
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
-            Meet Our Senior Doctors & Specialists
+            Our Dental Surgeons & Specialists in Chennai
           </h1>
           <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
             Dedicated clinical surgical care, specialized maxillofacial procedures, and patient-first ethics.
@@ -31,7 +32,7 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* DOCTOR CARDS */}
+      {/* DOCTOR CARDS (SEO H2 PER DOCTOR) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {DOCTORS_DATA.map((doc, idx) => (
           <motion.div
@@ -48,8 +49,9 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
               {doc.image ? (
                 <img
                   src={doc.image}
-                  alt={`${doc.name} ${doc.qualifications.join(' ')}`}
+                  alt={`${doc.name} - ${doc.role} at The Dental Clinics Chennai`}
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-primary-50 via-clinic-section to-primary-100/40 flex flex-col items-center justify-center text-primary space-y-3 p-8 text-center min-h-[360px]">
@@ -117,7 +119,7 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
                 <h2 className="text-3xl sm:text-4xl font-heading font-bold text-clinic-dark">{doc.name}</h2>
 
                 <div className="space-y-2">
-                  <h4 className="text-[11px] font-bold uppercase text-clinic-grey tracking-wider">Qualifications</h4>
+                  <h3 className="text-[11px] font-bold uppercase text-clinic-grey tracking-wider">Qualifications</h3>
                   <div className="flex flex-wrap gap-2">
                     {doc.qualifications.map((q, i) => (
                       <span
@@ -131,7 +133,7 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
                 </div>
 
                 <div className="space-y-2 pt-2">
-                  <h4 className="text-[11px] font-bold uppercase text-clinic-grey tracking-wider">Clinical & Surgical Focus</h4>
+                  <h3 className="text-[11px] font-bold uppercase text-clinic-grey tracking-wider">Clinical & Surgical Focus</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-clinic-dark">
                     {doc.specialties.map((spec, i) => (
                       <div key={i} className="flex items-center gap-2 bg-clinic-section p-2 rounded-xl border border-clinic-border">

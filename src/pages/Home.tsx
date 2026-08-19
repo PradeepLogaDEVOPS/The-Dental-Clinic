@@ -8,6 +8,7 @@ import {
   CLINIC_INFO, DOCTORS_DATA, TREATMENTS_DATA, 
   WHY_CHOOSE_US, TESTIMONIALS_DATA, GALLERY_DATA 
 } from '../data/clinicData';
+import { SEOHead } from '../components/SEOHead';
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
@@ -28,8 +29,13 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
 
   return (
     <div className="space-y-24 pb-16 font-body">
-      
-      {/* 1. HERO SECTION */}
+      <SEOHead
+        title="The Dental Clinics | Family Dental Care & Surgery in Chennai"
+        description="The Dental Clinics provides professional family dental care, dental implants, root canal treatment, braces, and oral surgery across Periyar Nagar, Jawahar Nagar, and Thiru Vi Ka Nagar in Chennai."
+        canonicalUrl="https://thedentalclinics.in/"
+      />
+
+      {/* 1. HERO SECTION (SEO OPTIMIZED H1) */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white pt-10 pb-20 lg:pt-16 lg:pb-32 border-b border-primary-light/20">
         <div className="absolute top-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-primary-light/20 rounded-full blur-3xl pointer-events-none" />
@@ -50,16 +56,16 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 <span>Established Dental Practice • Chennai</span>
               </div>
 
-              {/* Main Headline */}
+              {/* Primary SEO H1 Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-[1.15]">
-                Trusted Dental <br />
-                <span className="text-secondary">Healthcare Excellence</span> <br />
+                Comprehensive Dental <br />
+                <span className="text-secondary">Healthcare & Surgery</span> <br />
                 in Chennai
               </h1>
 
               {/* Subtext */}
               <p className="text-primary-100 text-base sm:text-lg leading-relaxed max-w-2xl">
-                The dental clinic was established by <strong className="text-white font-semibold">Dr. M. Gopalakrishnan</strong>, son of <strong className="text-white font-semibold">Dr. V. M. Nair</strong>, a medical physician. Continuing this tradition of patient care across <span className="text-secondary font-semibold">Periyar Nagar</span>, <span className="text-secondary font-semibold">Jawahar Nagar</span>, and <span className="text-secondary font-semibold">Thiru Vi Ka Nagar</span>.
+                The dental clinic was established by <strong className="text-white font-semibold">Dr. M. Gopalakrishnan</strong>, son of <strong className="text-white font-semibold">Dr. V. M. Nair</strong>, a medical physician. Providing ethical dental care for patients in <span className="text-secondary font-semibold">Periyar Nagar</span>, <span className="text-secondary font-semibold">Jawahar Nagar</span>, and <span className="text-secondary font-semibold">Thiru Vi Ka Nagar</span>.
               </p>
 
               {/* CTA Buttons */}
@@ -83,7 +89,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-semibold p-4 rounded-full shadow-lg transition-all flex items-center justify-center"
-                  aria-label="Contact via WhatsApp"
+                  aria-label="Contact clinic via WhatsApp"
                 >
                   <MessageSquare className="w-5 h-5" />
                 </a>
@@ -117,15 +123,16 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-white relative">
                   <img
                     src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
-                    alt="The Dental Clinics Chennai Operatory"
+                    alt="State-of-the-Art Dental Operatory at The Dental Clinics Chennai"
                     className="w-full h-[420px] sm:h-[480px] object-cover"
+                    loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-transparent to-transparent" />
                   
                   <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
                     <span className="text-xs text-secondary font-semibold uppercase tracking-wider">Clinical Integrity</span>
-                    <h3 className="text-xl font-heading font-bold">State-of-the-Art Care</h3>
-                    <p className="text-xs text-primary-100">Ethical diagnostics, painless root canals, laser surgery, and implants.</p>
+                    <h3 className="text-xl font-heading font-bold">State-of-the-Art Dental Care</h3>
+                    <p className="text-xs text-primary-100">Ethical diagnostics, root canals, laser dentistry, and dental implants.</p>
                   </div>
                 </div>
 
@@ -164,7 +171,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 2. ABOUT PREVIEW SECTION */}
+      {/* 2. ABOUT PREVIEW SECTION (H2) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-clinic-section rounded-3xl p-8 sm:p-12 border border-clinic-border grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
@@ -182,7 +189,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 onClick={() => setActiveTab('about')}
                 className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors group text-sm"
               >
-                Read Full Clinic History & Story
+                Read Full Practice History & Story
                 <ArrowRight className="w-4 h-4 text-secondary group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -191,20 +198,20 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="bg-white p-5 rounded-2xl shadow-sm border border-clinic-border space-y-2">
               <ShieldCheck className="w-7 h-7 text-primary" />
-              <h4 className="font-heading font-bold text-clinic-dark text-base">Ethical Standards</h4>
+              <h3 className="font-heading font-bold text-clinic-dark text-base">Ethical Standards</h3>
               <p className="text-xs text-clinic-grey">Transparent diagnoses and evidence-based patient recommendations.</p>
             </div>
 
             <div className="bg-white p-5 rounded-2xl shadow-sm border border-clinic-border space-y-2">
               <Users className="w-7 h-7 text-secondary" />
-              <h4 className="font-heading font-bold text-clinic-dark text-base">Experienced Practice</h4>
+              <h3 className="font-heading font-bold text-clinic-dark text-base">Experienced Practice</h3>
               <p className="text-xs text-clinic-grey">Dedicated dental doctors providing continuous family care.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. DOCTORS PREVIEW */}
+      {/* 3. DOCTORS PREVIEW (H2) */}
       <section className="bg-clinic-section py-16 border-y border-clinic-border">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -235,8 +242,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                   {doc.image ? (
                     <img
                       src={doc.image}
-                      alt={doc.name}
+                      alt={`${doc.name} - ${doc.role} at The Dental Clinics Chennai`}
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-primary-50 via-clinic-section to-primary-100/40 flex flex-col items-center justify-center text-primary space-y-2 p-4 text-center">
@@ -283,7 +291,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 4. TREATMENTS PREVIEW */}
+      {/* 4. TREATMENTS PREVIEW (H2) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
           <span className="text-xs font-bold uppercase tracking-wider text-secondary">
@@ -293,7 +301,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
             Our Dental Treatments & Services
           </h2>
           <p className="text-clinic-grey text-sm">
-            Modern, ethical, and gentle treatments tailored for all age groups.
+            Modern, ethical, and patient-focused treatments tailored for all age groups.
           </p>
         </div>
 
@@ -343,12 +351,12 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
             onClick={() => setActiveTab('treatments')}
             className="inline-flex items-center gap-2 bg-clinic-section hover:bg-primary-50 text-primary font-semibold px-6 py-3 rounded-full border border-clinic-border transition-colors text-sm"
           >
-            Explore All 12 Dental Treatments <ArrowRight className="w-4 h-4 text-secondary" />
+            Explore All Dental Treatments <ArrowRight className="w-4 h-4 text-secondary" />
           </button>
         </div>
       </section>
 
-      {/* 5. WHY CHOOSE US */}
+      {/* 5. WHY CHOOSE US (H2) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
@@ -359,7 +367,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               The Dental Clinics Distinction
             </h2>
             <p className="text-primary-100 text-sm">
-              Blending clinical heritage with modern surgical precision.
+              Blending clinical tradition with modern surgical precision.
             </p>
           </div>
 
@@ -372,7 +380,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary">
                   <CheckCircle2 className="w-6 h-6 text-secondary" />
                 </div>
-                <h4 className="font-heading font-bold text-lg text-white">{item.title}</h4>
+                <h3 className="font-heading font-bold text-lg text-white">{item.title}</h3>
                 <p className="text-xs text-primary-100 leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -380,7 +388,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 6. TESTIMONIALS CAROUSEL */}
+      {/* 6. TESTIMONIALS (H2) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-clinic-section rounded-3xl p-8 sm:p-12 border border-clinic-border space-y-8">
           <div className="text-center max-w-xl mx-auto space-y-2">
@@ -404,9 +412,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
             </p>
 
             <div>
-              <h4 className="font-bold text-clinic-dark text-base">
+              <h3 className="font-bold text-clinic-dark text-base">
                 {TESTIMONIALS_DATA[activeTestimonial].name}
-              </h4>
+              </h3>
               <p className="text-xs text-clinic-grey">
                 {TESTIMONIALS_DATA[activeTestimonial].locality} • Treatment:{' '}
                 <span className="text-primary font-medium">{TESTIMONIALS_DATA[activeTestimonial].treatment}</span>
@@ -429,7 +437,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 7. GALLERY PREVIEW */}
+      {/* 7. GALLERY PREVIEW (H2) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
           <div>
@@ -459,15 +467,16 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               >
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} - The Dental Clinics Chennai`}
                   className={`w-full h-full ${
                     isPoster ? 'object-contain p-2 bg-white' : 'object-cover group-hover:scale-110'
                   } transition-transform duration-500`}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                   <div>
                     <span className="text-[10px] text-secondary uppercase font-bold">{item.category}</span>
-                    <h4 className="text-xs font-bold text-white">{item.title}</h4>
+                    <h3 className="text-xs font-bold text-white">{item.title}</h3>
                   </div>
                 </div>
               </div>
@@ -481,7 +490,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
             className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
           >
             <div className="max-w-3xl max-h-[85vh] relative">
-              <img src={selectedGalleryImg} alt="Preview" className="max-w-full max-h-[85vh] rounded-2xl" />
+              <img src={selectedGalleryImg} alt="Enlarged clinic gallery view" className="max-w-full max-h-[85vh] rounded-2xl" />
               <button
                 onClick={() => setSelectedGalleryImg(null)}
                 className="absolute -top-10 right-0 text-white text-sm font-bold bg-white/20 px-3 py-1 rounded-full"
@@ -493,12 +502,12 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         )}
       </section>
 
-      {/* 8. APPOINTMENT CTA BANNER */}
+      {/* 8. APPOINTMENT CTA BANNER (H2) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-primary via-primary-dark to-[#0B3A63] text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 relative overflow-hidden shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-3 relative z-10">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary bg-white/10 px-3 py-1 rounded-full border border-white/20">
-              Your Smile Deserves The Best Care
+              Your Smile Deserves Quality Care
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold">
               Schedule Your Dental Consultation Today

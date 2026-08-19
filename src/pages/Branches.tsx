@@ -16,16 +16,17 @@ export const Branches: React.FC<BranchesProps> = ({ onOpenBooking }) => {
       <SEOHead
         title="Our Clinic Branches in Chennai | The Dental Clinics"
         description="Find our 3 convenient dental clinics in Chennai: Main Branch Periyar Nagar (+91 44 2550 5222), Jawahar Nagar (+91 44 3153 5314), and Thiru Vi Ka Nagar (+91 70102 60934)."
+        canonicalUrl="https://thedentalclinics.in/#branches"
       />
 
-      {/* HERO HEADER */}
+      {/* HERO HEADER (SEO H1) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             <MapPin className="w-4 h-4 text-secondary" /> 3 Convenient Locations Across Chennai
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
-            Our Clinic Branches
+            Our Clinic Branches in Chennai
           </h1>
           <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
             Accessible, state-of-the-art dental facilities situated in key residential neighborhood hubs.
@@ -33,7 +34,7 @@ export const Branches: React.FC<BranchesProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* BRANCHES CARDS */}
+      {/* BRANCHES CARDS (H2 PER BRANCH) */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {BRANCHES_DATA.map((branch, idx) => (
           <motion.div
@@ -51,8 +52,9 @@ export const Branches: React.FC<BranchesProps> = ({ onOpenBooking }) => {
               >
                 <img
                   src={branch.image}
-                  alt={`${branch.name} Building Facade`}
+                  alt={`${branch.name} Building Facade in Chennai`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
                 
                 {/* Photo Badge & Zoom Overlay */}
@@ -174,6 +176,7 @@ export const Branches: React.FC<BranchesProps> = ({ onOpenBooking }) => {
               <button
                 onClick={() => setZoomImage(null)}
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+                aria-label="Close photo preview"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -181,7 +184,7 @@ export const Branches: React.FC<BranchesProps> = ({ onOpenBooking }) => {
             <div className="p-3 bg-slate-900 flex items-center justify-center max-h-[80vh]">
               <img
                 src={zoomImage.src}
-                alt={zoomImage.title}
+                alt={`${zoomImage.title} Building Facade enlarged view`}
                 className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-lg"
               />
             </div>

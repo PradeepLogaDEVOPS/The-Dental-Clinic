@@ -107,7 +107,8 @@ The Dental Clinics Website`;
     <div className="space-y-16 pb-16 font-body relative">
       <SEOHead
         title="Contact Us & Locations | The Dental Clinics Chennai"
-        description="Contact The Dental Clinics Chennai. Call Main Branch (+91 44 2550 5222), Jawahar Nagar (+91 44 3153 5314), or Mobile & WhatsApp (+91 70102 60934). Book your appointment today."
+        description="Contact The Dental Clinics in Chennai. Call Main Branch (+91 44 2550 5222), Jawahar Nagar (+91 44 3153 5314), or Mobile & WhatsApp (+91 70102 60934). Book your appointment today."
+        canonicalUrl="https://thedentalclinics.in/#contact"
       />
 
       {/* SUCCESS TOAST */}
@@ -118,14 +119,14 @@ The Dental Clinics Website`;
         </div>
       )}
 
-      {/* HEADER HERO */}
+      {/* HEADER HERO (SEO H1) */}
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
             <Phone className="w-4 h-4 text-secondary" /> Direct Patient Support & Appointments
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
-            Get In Touch With Us
+            Contact & Appointment Booking
           </h1>
           <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
             Reach out directly to any of our three clinic branches or send us an inquiry online.
