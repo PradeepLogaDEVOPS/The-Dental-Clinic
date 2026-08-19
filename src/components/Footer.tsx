@@ -19,19 +19,19 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           
-          {/* Column 1: Brand & Legacy */}
+          {/* Column 1: Brand & Practice Info */}
           <div className="lg:col-span-2 space-y-4">
             <Logo lightMode={true} />
             <p className="text-primary-100 text-sm leading-relaxed max-w-sm">
-              Established in 1945 by Dr. V. M. Nair, The Dental Clinics has provided 80+ years of compassionate, ethical, and patient-centered multi-generational dental healthcare in Chennai.
+              The dental clinic was established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician. Providing compassionate, ethical, and patient-centered dental healthcare across Chennai.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
               <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-white border border-white/10">
-                <ShieldCheck className="w-4 h-4 text-secondary" /> Est. 1945 • 80+ Yrs Legacy
+                <ShieldCheck className="w-4 h-4 text-secondary" /> Established Practice
               </div>
               <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-white border border-white/10">
-                <Heart className="w-4 h-4 text-red-400" /> Multi-Gen Family Care
+                <Heart className="w-4 h-4 text-red-400" /> Patient-Centered Care
               </div>
             </div>
           </div>

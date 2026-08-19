@@ -20,13 +20,13 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
       <section className="bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white py-16 px-4 sm:px-6 text-center space-y-4">
         <div className="max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
-            <Stethoscope className="w-4 h-4 text-secondary" /> Multi-Generational Medical Expertise
+            <Stethoscope className="w-4 h-4 text-secondary" /> Dental Surgeons & Specialists
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
             Meet Our Senior Doctors & Specialists
           </h1>
           <p className="text-primary-100 text-sm sm:text-base leading-relaxed">
-            Generational clinical wisdom, advanced maxillofacial surgical specializations, and patient-first ethics.
+            Dedicated clinical surgical care, specialized maxillofacial procedures, and patient-first ethics.
           </p>
         </div>
       </section>

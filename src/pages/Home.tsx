@@ -29,7 +29,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
   return (
     <div className="space-y-24 pb-16 font-body">
       
-      {/* 1. HERO SECTION (BLUE THEME) */}
+      {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white pt-10 pb-20 lg:pt-16 lg:pb-32 border-b border-primary-light/20">
         <div className="absolute top-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-primary-light/20 rounded-full blur-3xl pointer-events-none" />
@@ -44,22 +44,22 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-7 space-y-6 text-left"
             >
-              {/* Legacy Badge */}
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white font-semibold text-xs uppercase tracking-wider border border-white/20 backdrop-blur-sm">
                 <ShieldCheck className="w-4 h-4 text-secondary" />
-                <span>Est. 1945 • 80+ Years Healthcare Legacy</span>
+                <span>Established Dental Practice • Chennai</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-[1.15]">
-                Multi-Generational <br />
-                <span className="text-secondary">Dental Excellence</span> <br />
+                Trusted Dental <br />
+                <span className="text-secondary">Healthcare Excellence</span> <br />
                 in Chennai
               </h1>
 
               {/* Subtext */}
               <p className="text-primary-100 text-base sm:text-lg leading-relaxed max-w-2xl">
-                Founded in 1945 by <strong className="text-white font-semibold">Dr. V. M. Nair, R.M.P.</strong>, The Dental Clinics represents four generations of trusted, ethical, and compassionate family healthcare across <span className="text-secondary font-semibold">Periyar Nagar</span>, <span className="text-secondary font-semibold">Jawahar Nagar</span>, and <span className="text-secondary font-semibold">Thiru Vi Ka Nagar</span>.
+                The dental clinic was established by <strong className="text-white font-semibold">Dr. M. Gopalakrishnan</strong>, son of <strong className="text-white font-semibold">Dr. V. M. Nair</strong>, a medical physician. Continuing this tradition of patient care across <span className="text-secondary font-semibold">Periyar Nagar</span>, <span className="text-secondary font-semibold">Jawahar Nagar</span>, and <span className="text-secondary font-semibold">Thiru Vi Ka Nagar</span>.
               </p>
 
               {/* CTA Buttons */}
@@ -92,16 +92,16 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               {/* Trust Metrics Bar */}
               <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center sm:text-left">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">80+</div>
-                  <div className="text-xs text-primary-100 font-medium">Years Legacy</div>
-                </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">4 Gen</div>
-                  <div className="text-xs text-primary-100 font-medium">Dental Experts</div>
-                </div>
-                <div>
                   <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">3</div>
-                  <div className="text-xs text-primary-100 font-medium">Chennai Branches</div>
+                  <div className="text-xs text-primary-100 font-medium">Clinic Branches</div>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">BDS & MDS</div>
+                  <div className="text-xs text-primary-100 font-medium">Dental Surgeons</div>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">12</div>
+                  <div className="text-xs text-primary-100 font-medium">Dental Specialties</div>
                 </div>
               </div>
             </motion.div>
@@ -123,7 +123,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-transparent to-transparent" />
                   
                   <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                    <span className="text-xs text-secondary font-semibold uppercase tracking-wider">Clinical Integrity Since 1945</span>
+                    <span className="text-xs text-secondary font-semibold uppercase tracking-wider">Clinical Integrity</span>
                     <h3 className="text-xl font-heading font-bold">State-of-the-Art Care</h3>
                     <p className="text-xs text-primary-100">Ethical diagnostics, painless root canals, laser surgery, and implants.</p>
                   </div>
@@ -138,8 +138,8 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                     <Award className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-primary">Founded in 1945</div>
-                    <div className="text-[11px] text-clinic-grey">Dr. V. M. Nair (Founder)</div>
+                    <div className="text-xs font-bold text-primary">Dr. M. Gopalakrishnan</div>
+                    <div className="text-[11px] text-clinic-grey">Established Dental Practice</div>
                   </div>
                 </motion.div>
 
@@ -169,10 +169,10 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         <div className="bg-clinic-section rounded-3xl p-8 sm:p-12 border border-clinic-border grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">
-              Heritage of Excellence
+              Clinic Tradition & Practice
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-clinic-dark">
-              Eight Decades of Family Healthcare Integrity
+              Ethical & Patient-Centered Healthcare
             </h2>
             <p className="text-clinic-grey text-sm sm:text-base leading-relaxed">
               {CLINIC_INFO.aboutFull}
@@ -197,8 +197,8 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
 
             <div className="bg-white p-5 rounded-2xl shadow-sm border border-clinic-border space-y-2">
               <Users className="w-7 h-7 text-secondary" />
-              <h4 className="font-heading font-bold text-clinic-dark text-base">4 Generations</h4>
-              <p className="text-xs text-clinic-grey">Multi-generational oral healthcare wisdom handed down with pride.</p>
+              <h4 className="font-heading font-bold text-clinic-dark text-base">Experienced Practice</h4>
+              <p className="text-xs text-clinic-grey">Dedicated dental doctors providing continuous family care.</p>
             </div>
           </div>
         </div>
@@ -349,7 +349,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               The Dental Clinics Distinction
             </h2>
             <p className="text-primary-100 text-sm">
-              Blending eight decades of healthcare heritage with modern surgical precision.
+              Blending clinical heritage with modern surgical precision.
             </p>
           </div>
 
@@ -378,7 +378,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               Patient Experiences
             </span>
             <h2 className="text-3xl font-heading font-bold text-clinic-dark">
-              Trusted Across Generations
+              Trusted Patient Care
             </h2>
           </div>
 
@@ -489,7 +489,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               Schedule Your Dental Consultation Today
             </h2>
             <p className="text-primary-100 text-sm leading-relaxed">
-              Experience 80+ years of healthcare legacy, gentle care, and painless treatment across our 3 branches in Chennai.
+              Experience compassionate care, gentle treatment, and modern dental solutions across our 3 branches in Chennai.
             </p>
           </div>
 

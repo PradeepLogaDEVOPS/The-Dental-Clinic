@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Award, Target, Eye, Heart, Calendar, ChevronRight, ChevronLeft } from 'lucide-react';
-import { CLINIC_INFO, TIMELINE_DATA } from '../data/clinicData';
+import { ShieldCheck, Award, Target, Eye, Heart, Calendar } from 'lucide-react';
+import { CLINIC_INFO } from '../data/clinicData';
 import { SEOHead } from '../components/SEOHead';
 import clinicLogo from '../assets/logo.png';
 
@@ -10,13 +10,11 @@ interface AboutUsProps {
 }
 
 export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
-  const [activeTimelineIndex, setActiveTimelineIndex] = useState<number>(0);
-
   return (
     <div className="space-y-16 pb-16 font-body">
       <SEOHead
-        title="About Us & Legacy | The Dental Clinics Chennai"
-        description="Discover the 80+ year healthcare legacy of The Dental Clinics Chennai. Founded in 1945 by Dr. V. M. Nair, R.M.P., spanning 4 generations of ethical family dentistry."
+        title="About Us & Practice History | The Dental Clinics Chennai"
+        description="Discover the history of The Dental Clinics Chennai. Established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician, providing ethical dental care across Chennai."
       />
 
       {/* PAGE HEADER HERO (BLUE THEME) */}
@@ -37,24 +35,24 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
             />
           </motion.div>
 
-          {/* Legacy Badges */}
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/30 text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
-            <ShieldCheck className="w-4 h-4 text-secondary" /> Est. 1945 • 80+ Years Healthcare Legacy
+            <ShieldCheck className="w-4 h-4 text-secondary" /> Established Dental Practice • Chennai
           </div>
 
           {/* Title */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
-            About Our Institution
+            About Our Practice
           </h1>
 
           {/* Paragraph */}
           <p className="text-primary-100 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            For over eight decades, our family has been dedicated to providing compassionate, ethical, and patient-centered healthcare across generations in Chennai.
+            The dental clinic was established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician.
           </p>
         </div>
       </section>
 
-      {/* FULL VERBATIM LEGACY NARRATIVE */}
+      {/* FULL FACTUAL HISTORY NARRATIVE */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,10 +66,10 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
             </div>
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-secondary">
-                Our Heritage & History
+                Our History & Practice
               </span>
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-clinic-dark">
-                An Eight-Decade Healthcare Journey
+                Clinic History & Development
               </h2>
             </div>
           </div>
@@ -82,118 +80,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                 {paragraph}
               </p>
             ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* BEAUTIFUL HORIZONTAL ANIMATED TIMELINE */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="text-center max-w-xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-secondary">
-            Legacy Timeline
-          </span>
-          <h2 className="text-3xl font-heading font-bold text-clinic-dark">
-            Four Generations of Medical & Dental Leaders
-          </h2>
-          <p className="text-xs text-clinic-grey">
-            Use the interactive timeline below to navigate through our history from 1945 to present day.
-          </p>
-        </div>
-
-        {/* Horizontal Nav Bar */}
-        <div className="bg-clinic-section p-4 rounded-3xl border border-clinic-border relative shadow-inner">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {TIMELINE_DATA.map((item, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveTimelineIndex(idx)}
-                className={`p-4 rounded-2xl text-left transition-all relative overflow-hidden ${
-                  activeTimelineIndex === idx
-                    ? 'bg-primary text-white shadow-lg transform -translate-y-1'
-                    : 'bg-white text-clinic-dark hover:bg-clinic-border'
-                }`}
-              >
-                <div className="text-xs font-bold uppercase tracking-wider opacity-80">
-                  {item.year}
-                </div>
-                <div className="text-sm font-heading font-bold mt-1 line-clamp-1">
-                  {item.doctorName.split(',')[0]}
-                </div>
-                {activeTimelineIndex === idx && (
-                  <motion.div
-                    layoutId="activeTimelineGlow"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-secondary"
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Timeline Active Card Details */}
-        <motion.div
-          key={activeTimelineIndex}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          className="bg-white p-8 sm:p-10 rounded-3xl border-2 border-primary-100 shadow-lg grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
-        >
-          <div className="md:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 text-primary text-xs font-bold uppercase">
-              {TIMELINE_DATA[activeTimelineIndex].year} • {TIMELINE_DATA[activeTimelineIndex].title}
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-clinic-dark">
-              {TIMELINE_DATA[activeTimelineIndex].doctorName}
-            </h3>
-
-            {TIMELINE_DATA[activeTimelineIndex].qualifications && (
-              <p className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                {TIMELINE_DATA[activeTimelineIndex].qualifications}
-              </p>
-            )}
-
-            {TIMELINE_DATA[activeTimelineIndex].institution && (
-              <p className="text-xs font-medium text-clinic-grey">
-                Institution: <span className="text-clinic-dark font-semibold">{TIMELINE_DATA[activeTimelineIndex].institution}</span>
-              </p>
-            )}
-
-            <p className="text-clinic-grey text-sm leading-relaxed">
-              {TIMELINE_DATA[activeTimelineIndex].description}
-            </p>
-
-            <div className="pt-2 flex items-center gap-3">
-              <button
-                disabled={activeTimelineIndex === 0}
-                onClick={() => setActiveTimelineIndex((prev) => Math.max(0, prev - 1))}
-                className="p-2 rounded-full border border-clinic-border text-clinic-dark hover:bg-clinic-section disabled:opacity-30 disabled:cursor-not-allowed"
-                aria-label="Previous timeline step"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <span className="text-xs text-clinic-grey font-medium">
-                Step {activeTimelineIndex + 1} of {TIMELINE_DATA.length}
-              </span>
-              <button
-                disabled={activeTimelineIndex === TIMELINE_DATA.length - 1}
-                onClick={() => setActiveTimelineIndex((prev) => Math.min(TIMELINE_DATA.length - 1, prev + 1))}
-                className="p-2 rounded-full border border-clinic-border text-clinic-dark hover:bg-clinic-section disabled:opacity-30 disabled:cursor-not-allowed"
-                aria-label="Next timeline step"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-
-          <div className="md:col-span-4 bg-clinic-section p-6 rounded-2xl border border-clinic-border text-center space-y-3">
-            <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto">
-              <Award className="w-8 h-8 text-secondary" />
-            </div>
-            <h4 className="font-heading font-bold text-clinic-dark text-lg">Legacy Institution</h4>
-            <p className="text-xs text-clinic-grey">
-              Continuing eight decades of patient-centered healthcare integrity in Periyar Nagar, Jawahar Nagar, and Thiru Vi Ka Nagar.
-            </p>
           </div>
         </motion.div>
       </section>
@@ -231,7 +117,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
             </div>
             <h3 className="text-2xl font-heading font-bold text-clinic-dark">Holistic Healthcare</h3>
             <p className="text-xs sm:text-sm text-clinic-grey leading-relaxed">
-              With <strong className="text-clinic-dark">Dr. Lakshmi Madhavan (Physiotherapy)</strong> joining the family practice, our commitment extends beyond dental treatments to overall bodily wellness and holistic health.
+              With <strong className="text-clinic-dark">Dr. Lakshmi Madhavan (Physiotherapy)</strong> joining the practice, our commitment extends beyond dental treatments to overall bodily wellness and holistic health.
             </p>
           </div>
 
@@ -242,7 +128,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <div className="bg-gradient-to-r from-primary via-primary-dark to-[#0B3A63] text-white p-8 sm:p-12 rounded-3xl shadow-xl space-y-6">
           <h3 className="text-2xl sm:text-3xl font-heading font-bold">
-            Experience 80+ Years of Healthcare Excellence
+            Experience Quality & Ethical Healthcare
           </h3>
           <p className="text-primary-100 text-sm max-w-xl mx-auto">
             Book a consultation with our experienced dental surgeons across Periyar Nagar, Jawahar Nagar, and Thiru Vi Ka Nagar.

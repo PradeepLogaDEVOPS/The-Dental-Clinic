@@ -7,8 +7,8 @@ interface SEOHeadProps {
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "The Dental Clinics | 80+ Years Multi-Generational Dental Excellence in Chennai",
-  description = "Leading multi-generational dental clinic in Chennai (Est. 1945 by Dr. V. M. Nair). Specializing in dental implants, painless root canal, smile design, braces, and oral surgery across Periyar Nagar, Jawahar Nagar, and Thiru Vi Ka Nagar.",
+  title = "The Dental Clinics | Ethical & Comprehensive Dental Healthcare in Chennai",
+  description = "The Dental Clinics in Chennai, established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician. Specializing in dental implants, painless root canal, smile design, braces, and oral surgery across Periyar Nagar, Jawahar Nagar, and Thiru Vi Ka Nagar.",
   canonicalUrl = "https://thedentalclinics.in"
 }) => {
   useEffect(() => {

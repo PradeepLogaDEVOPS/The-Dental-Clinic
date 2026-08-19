@@ -39,17 +39,6 @@ export interface Branch {
   isMain?: boolean;
 }
 
-export interface TimelineEvent {
-  year: string;
-  title: string;
-  doctorName: string;
-  subtitle?: string;
-  qualifications?: string;
-  institution?: string;
-  description: string;
-  icon: string;
-}
-
 export interface Testimonial {
   id: string;
   name: string;
@@ -69,82 +58,36 @@ export interface GalleryItem {
 
 export const CLINIC_INFO = {
   name: "The Dental Clinics",
-  tagline: "80+ Years of Multi-Generational Dental Healthcare Excellence in Chennai",
-  established: 1945,
-  founder: "Dr. V. M. Nair, R.M.P.",
+  tagline: "Compassionate, Ethical & Comprehensive Dental Healthcare in Chennai",
+  founderInfo: "The dental clinic was established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician.",
   whatsappNumber: "917010260934",
   whatsappFormatted: "+91 70102 60934",
   generalEmail: "contact@thedentalclinics.in",
   emergencyPhone: "+91 70102 60934",
-  aboutFull: "For over eight decades, our family has been dedicated to providing compassionate, ethical, and patient-centered healthcare across generations in Chennai. Established in 1945 by Dr. V. M. Nair, R.M.P., The Dental Clinics has grown across four generations into a premier dental institution.",
+  aboutFull: "The dental clinic was established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician. Continuing this tradition of patient care, our team provides comprehensive, ethical, and advanced dental care across our branches in Chennai.",
   
-  // Exact About Content from Prompt
   historyStory: [
-    "For over eight decades, our family has been dedicated to providing compassionate, ethical, and patient-centered healthcare across generations.",
-    "Our journey began in 1945 when Dr. V. M. Nair, R.M.P., a distinguished physician and graduate of Stanley Medical College, Chennai, established his medical practice. His commitment to compassionate care laid the foundation for a legacy that continues today.",
-    "Inspired by his father, Dr. Gopalakrishnan pursued dentistry after graduating from Government Dental College, Thiruvananthapuram. He established his first dental clinic in Otteri and later expanded to Jawahar Nagar, earning the trust of generations of patients.",
-    "The legacy continued with Dr. G. Madhavan (BDS), who graduated from Bapuji Dental College and expanded the family practice by establishing another clinic in Thiru Vi Ka Nagar.",
-    "Representing the fourth generation, Dr. Sanjay Madhavan (MDS – Oral & Maxillofacial Surgery, Oral Implantology, Fellowship in Oral Cancer Resection) brings advanced surgical expertise and modern dental care.",
-    "Joining him is Dr. Sandra Arun (BDS), a graduate of Pushpagiri College of Dental Sciences, Kerala, continuing the tradition of compassionate patient care.",
-    "The family's healthcare journey also includes Dr. Lakshmi Madhavan (Physiotherapy), reflecting a commitment to holistic healthcare.",
-    "Today, The Dental Clinics – Periyar Nagar continues this remarkable legacy of excellence, trust, innovation, and compassionate care."
+    "Dr. V. M. Nair was a medical physician who established a dedicated medical practice in Chennai, building a foundation of ethical patient care.",
+    "The dental clinic was established by Dr. M. Gopalakrishnan, son of Dr. V. M. Nair, a medical physician. After graduating from Government Dental College, Thiruvananthapuram, Dr. M. Gopalakrishnan established his practice to serve patients with ethical dental healthcare.",
+    "Dr. G. Madhavan (BDS), a graduate of Bapuji Dental College, expanded the family practice by establishing another clinic in Thiru Vi Ka Nagar.",
+    "Dr. Sanjay Madhavan (MDS – Oral & Maxillofacial Surgery, Oral Implantology, Fellowship in Oral Cancer Resection) brings advanced surgical expertise, oral implantology, and specialized care.",
+    "Dr. Sandra Arun (BDS), a graduate of Pushpagiri College of Dental Sciences, Kerala, contributes to patient care with gentle and comprehensive dentistry.",
+    "The healthcare tradition also includes Dr. Lakshmi Madhavan (Physiotherapy), reflecting a holistic approach to patient wellness.",
+    "Today, The Dental Clinics continues this practice of clinical excellence, patient trust, and ethical healthcare."
   ],
 
-  mission: "To deliver ethical, painless, and multi-generational dental healthcare utilizing state-of-the-art diagnostic technology while prioritizing patient comfort, safety, and lifelong oral wellness.",
-  vision: "To remain Chennai's most trusted family dental healthcare institution, blending an 80+ year legacy of clinical integrity with modern surgical, cosmetic, and preventive dentistry.",
+  mission: "To deliver ethical, painless, and high-quality dental healthcare utilizing state-of-the-art diagnostic technology while prioritizing patient comfort, safety, and oral wellness.",
+  vision: "To remain a trusted family dental healthcare institution, blending clinical integrity with modern surgical, cosmetic, and preventive dentistry.",
   values: [
-    "80+ Years of Legacy",
-    "Multi-Generation Dental Experts",
-    "Experienced Specialists",
-    "Modern Technology",
-    "Personalized Care",
-    "Ethical Treatment",
-    "Comfortable Environment",
+    "Established Healthcare Tradition",
+    "Experienced Dental Specialists",
+    "Modern Dental Technology",
+    "Personalized Patient Care",
+    "Ethical Treatment Protocols",
+    "Comfortable Clinic Environment",
     "Advanced Surgical Expertise"
   ]
 };
-
-export const TIMELINE_DATA: TimelineEvent[] = [
-  {
-    year: "1945",
-    title: "Generation I: Founder",
-    doctorName: "Dr. V. M. Nair, R.M.P.",
-    subtitle: "Stanley Medical College, Chennai",
-    institution: "Stanley Medical College, Chennai",
-    description: "Established his medical practice in Chennai, laying the foundation of compassionate, ethical healthcare that continues across generations.",
-    icon: "Heart"
-  },
-  {
-    year: "Generation II",
-    title: "Pioneering Family Dentistry",
-    doctorName: "Dr. Gopalakrishnan",
-    subtitle: "Govt Dental College, Thiruvananthapuram | Otteri & Jawahar Nagar",
-    qualifications: "BDS",
-    institution: "Government Dental College, Thiruvananthapuram",
-    description: "Established his first dental clinic in Otteri and expanded to Jawahar Nagar, earning the trust of generations of patients.",
-    icon: "Award"
-  },
-  {
-    year: "Generation III",
-    title: "Clinical Expansion",
-    doctorName: "Dr. G. Madhavan",
-    subtitle: "BDS | Bapuji Dental College | Thiru Vi Ka Nagar",
-    qualifications: "BDS",
-    institution: "Bapuji Dental College",
-    description: "Expanded the family practice by establishing another clinic in Thiru Vi Ka Nagar, elevating clinical standards and accessibility.",
-    icon: "Building"
-  },
-  {
-    year: "Generation IV",
-    title: "Advanced Surgery & Modern Care",
-    doctorName: "Dr. Sanjay Madhavan & Dr. Sandra Arun",
-    subtitle: "MDS Oral & Maxillofacial Surgery | BDS Dental Surgeon",
-    qualifications: "MDS (Maxillofacial & Implantology) | BDS",
-    institution: "Pushpagiri College of Dental Sciences & Surgical Fellowships",
-    description: "Pioneering state-of-the-art oral implantology, laser dentistry, and oral cancer screening. Accompanied by Dr. Lakshmi Madhavan (Physiotherapy) for holistic care.",
-    icon: "Sparkles"
-  }
-];
 
 export const DOCTORS_DATA: Doctor[] = [
   {
@@ -154,7 +97,7 @@ export const DOCTORS_DATA: Doctor[] = [
     role: "Senior Dental Surgeon",
     college: "Bapuji Dental College",
     specialties: ["Senior Dental Surgery", "Geriatric Dental Care", "Preventive Care", "Comprehensive Diagnostics"],
-    bio: "Graduated from Bapuji Dental College and expanded the family practice by establishing another clinic in Thiru Vi Ka Nagar. Carries forward decades of clinical wisdom and ethical patient care.",
+    bio: "Graduated from Bapuji Dental College and expanded the family practice by establishing another clinic in Thiru Vi Ka Nagar. Dedicated to clinical excellence and ethical patient care.",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800",
     experience: "Senior Dental Surgeon",
     socials: {
@@ -173,9 +116,9 @@ export const DOCTORS_DATA: Doctor[] = [
     role: "Oral & Maxillofacial Surgeon, Oral Implantologist",
     college: "MDS - Oral & Maxillofacial Surgery",
     specialties: ["Oral & Maxillofacial Surgery", "Oral Implantology", "Fellowship in Oral Cancer Resection", "Wisdom Tooth Removal"],
-    bio: "Representing the fourth generation, Dr. Sanjay Madhavan brings advanced surgical expertise, oral implantology, and specialized fellowship training in oral cancer resection for high-precision patient care.",
+    bio: "Dr. Sanjay Madhavan brings advanced surgical expertise, oral implantology, and specialized fellowship training in oral cancer resection for high-precision patient care.",
     image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800",
-    experience: "Fourth Generation MDS Specialist",
+    experience: "MDS Specialist",
     socials: {
       phone: "+91 70102 60934",
       email: "dr.sanjay@thedentalclinics.in",
@@ -189,7 +132,7 @@ export const DOCTORS_DATA: Doctor[] = [
     role: "Dental Surgeon",
     college: "Pushpagiri College of Dental Sciences, Kerala",
     specialties: ["Dental Surgery", "Kids Dentistry", "Smile Designing", "Laser Dentistry", "Cosmetic Restorations"],
-    bio: "Graduate of Pushpagiri College of Dental Sciences, Kerala, Dr. Sandra Arun joins the fourth generation, continuing the tradition of compassionate patient care and gentle dental management.",
+    bio: "Graduate of Pushpagiri College of Dental Sciences, Kerala, Dr. Sandra Arun provides compassionate patient care and gentle dental management.",
     image: "https://images.unsplash.com/photo-1594824813571-24a698377c95?auto=format&fit=crop&q=80&w=800",
     experience: "Dental Surgeon",
     socials: {
@@ -350,17 +293,16 @@ export const BRANCHES_DATA: Branch[] = [
   }
 ];
 
-// Exact 8 Points from Prompt
 export const WHY_CHOOSE_US = [
   {
     icon: "Award",
-    title: "80+ Years of Legacy",
-    description: "Over eight decades of dedicated healthcare service in Chennai since 1945."
+    title: "Established Tradition",
+    description: "Built on a dedicated family tradition of healthcare service in Chennai."
   },
   {
     icon: "Users",
-    title: "Multi-Generation Dental Experts",
-    description: "Four generations of distinguished doctors providing continuous family care."
+    title: "Experienced Practice",
+    description: "Dedicated dental doctors providing continuous, family-centered care."
   },
   {
     icon: "Stethoscope",
@@ -401,7 +343,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     locality: "Periyar Nagar, Chennai",
     rating: 5,
     treatment: "Dental Implants & Crown",
-    comment: "Our entire family has been visiting The Dental Clinics for over 30 years. Dr. Sanjay Madhavan performed my implant surgery completely painlessly. Truly an institution of trust!",
+    comment: "Our family has been visiting The Dental Clinics for years. Dr. Sanjay Madhavan performed my implant surgery completely painlessly. Truly an institution of trust!",
     date: "January 2026"
   },
   {
