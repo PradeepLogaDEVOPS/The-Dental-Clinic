@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Stethoscope, CheckCircle2, Calendar, Phone, Mail, Globe } from 'lucide-react';
+import { Stethoscope, CheckCircle2, Calendar, Phone, Mail, Globe, User } from 'lucide-react';
 import { DOCTORS_DATA } from '../data/clinicData';
 import { SEOHead } from '../components/SEOHead';
 
@@ -44,18 +44,29 @@ export const Doctors: React.FC<DoctorsProps> = ({ onOpenBooking }) => {
             }`}
           >
             {/* Image Column */}
-            <div className="lg:col-span-5 relative min-h-[360px] lg:min-h-[440px] bg-clinic-section overflow-hidden">
-              <img
-                src={doc.image}
-                alt={`${doc.name} ${doc.qualifications.join(' ')}`}
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+            <div className="lg:col-span-5 relative min-h-[360px] lg:min-h-[440px] bg-clinic-section overflow-hidden flex items-center justify-center">
+              {doc.image ? (
+                <img
+                  src={doc.image}
+                  alt={`${doc.name} ${doc.qualifications.join(' ')}`}
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-primary-50 via-clinic-section to-primary-100/40 flex flex-col items-center justify-center text-primary space-y-3 p-8 text-center min-h-[360px]">
+                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shadow-inner">
+                    <User className="w-12 h-12 text-primary" />
+                  </div>
+                  <span className="text-sm font-bold text-primary">{doc.name}</span>
+                  <span className="text-xs text-clinic-grey">{doc.role}</span>
+                </div>
+              )}
+
+              <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10">
                 {doc.experience}
               </div>
 
               {doc.college && (
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-2xl border border-clinic-border text-xs text-clinic-dark shadow-lg">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-2xl border border-clinic-border text-xs text-clinic-dark shadow-lg z-10">
                   <span className="text-[10px] text-clinic-grey uppercase font-bold block">Alma Mater / Institution</span>
                   <span className="font-semibold text-primary">{doc.college}</span>
                 </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Calendar, Phone, MessageSquare, ShieldCheck, Award, Users, ChevronRight, 
+  Calendar, Phone, MessageSquare, ShieldCheck, Award, Users, User, ChevronRight, 
   Star, MapPin, ArrowRight, Sparkles, CheckCircle2
 } from 'lucide-react';
 import { 
@@ -231,12 +231,22 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
                 whileHover={{ y: -6 }}
                 className="bg-white rounded-3xl overflow-hidden border border-clinic-border shadow-sm hover:shadow-card-hover transition-all flex flex-col"
               >
-                <div className="relative h-64 bg-clinic-section overflow-hidden">
-                  <img
-                    src={doc.image}
-                    alt={doc.name}
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                  />
+                <div className="relative h-64 bg-clinic-section overflow-hidden flex items-center justify-center">
+                  {doc.image ? (
+                    <img
+                      src={doc.image}
+                      alt={doc.name}
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary-50 via-clinic-section to-primary-100/40 flex flex-col items-center justify-center text-primary space-y-2 p-4 text-center">
+                      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shadow-inner">
+                        <User className="w-10 h-10 text-primary" />
+                      </div>
+                      <span className="text-xs font-bold text-primary">{doc.name}</span>
+                      <span className="text-[11px] text-clinic-grey">{doc.role}</span>
+                    </div>
+                  )}
                   <div className="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-[11px] font-bold shadow-md">
                     {doc.experience}
                   </div>

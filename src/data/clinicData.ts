@@ -98,7 +98,7 @@ export const DOCTORS_DATA: Doctor[] = [
     college: "Bapuji Dental College",
     specialties: ["Senior Dental Surgery", "Geriatric Dental Care", "Preventive Care", "Comprehensive Diagnostics"],
     bio: "Graduated from Bapuji Dental College and expanded the family practice by establishing another clinic in Thiru Vi Ka Nagar. Dedicated to clinical excellence and ethical patient care.",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800",
+    image: "",
     experience: "Senior Dental Surgeon",
     socials: {
       phone: "+91 44 2550 5222",
@@ -117,7 +117,7 @@ export const DOCTORS_DATA: Doctor[] = [
     college: "MDS - Oral & Maxillofacial Surgery",
     specialties: ["Oral & Maxillofacial Surgery", "Oral Implantology", "Fellowship in Oral Cancer Resection", "Wisdom Tooth Removal"],
     bio: "Dr. Sanjay Madhavan brings advanced surgical expertise, oral implantology, and specialized fellowship training in oral cancer resection for high-precision patient care.",
-    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800",
+    image: "/dr_sanjay_madhavan.png",
     experience: "MDS Specialist",
     socials: {
       phone: "+91 70102 60934",
@@ -133,7 +133,7 @@ export const DOCTORS_DATA: Doctor[] = [
     college: "Pushpagiri College of Dental Sciences, Kerala",
     specialties: ["Dental Surgery", "Kids Dentistry", "Smile Designing", "Laser Dentistry", "Cosmetic Restorations"],
     bio: "Graduate of Pushpagiri College of Dental Sciences, Kerala, Dr. Sandra Arun provides compassionate patient care and gentle dental management.",
-    image: "https://images.unsplash.com/photo-1594824813571-24a698377c95?auto=format&fit=crop&q=80&w=800",
+    image: "",
     experience: "Dental Surgeon",
     socials: {
       phone: "+91 70102 60934",
