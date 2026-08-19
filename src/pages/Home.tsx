@@ -449,25 +449,30 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {GALLERY_DATA.slice(0, 6).map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedGalleryImg(item.image)}
-              className="relative group rounded-2xl overflow-hidden cursor-pointer h-48 sm:h-60 bg-clinic-section border border-clinic-border"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <div>
-                  <span className="text-[10px] text-secondary uppercase font-bold">{item.category}</span>
-                  <h4 className="text-xs font-bold text-white">{item.title}</h4>
+          {GALLERY_DATA.slice(0, 6).map((item) => {
+            const isPoster = item.image.endsWith('.png');
+            return (
+              <div
+                key={item.id}
+                onClick={() => setSelectedGalleryImg(item.image)}
+                className="relative group rounded-2xl overflow-hidden cursor-pointer h-48 sm:h-60 bg-white border border-clinic-border flex items-center justify-center"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={`w-full h-full ${
+                    isPoster ? 'object-contain p-2 bg-white' : 'object-cover group-hover:scale-110'
+                  } transition-transform duration-500`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                  <div>
+                    <span className="text-[10px] text-secondary uppercase font-bold">{item.category}</span>
+                    <h4 className="text-xs font-bold text-white">{item.title}</h4>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {selectedGalleryImg && (

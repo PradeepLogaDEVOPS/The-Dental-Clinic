@@ -377,6 +377,24 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 
 export const GALLERY_DATA: GalleryItem[] = [
   {
+    id: "gal-client-1",
+    title: "Oral Cancer Awareness & Tobacco Prevention",
+    category: "Patient Care",
+    image: "/oral_cancer_awareness.png"
+  },
+  {
+    id: "gal-client-2",
+    title: "Conscious Sedation Treatment Guide",
+    category: "Modern Equipment",
+    image: "/conscious_sedation_treatment.png"
+  },
+  {
+    id: "gal-client-3",
+    title: "Pre-Cancerous Lesions Early Detection",
+    category: "Patient Care",
+    image: "/precancerous_lesions.png"
+  },
+  {
     id: "gal-1",
     title: "Modern Sterilization Suite",
     category: "Clinic Facilities",
