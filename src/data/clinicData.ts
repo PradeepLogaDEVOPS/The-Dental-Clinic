@@ -37,6 +37,7 @@ export interface Branch {
   mapDirectionUrl: string;
   hours: string;
   isMain?: boolean;
+  image?: string;
 }
 
 export interface Testimonial {
@@ -265,7 +266,8 @@ export const BRANCHES_DATA: Branch[] = [
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.679169622953!2d80.21852!3d13.11666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ab75fb13ad%3A0x4bf2e5b85437890!2sPeriyar%20Nagar%2C%20Chennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     mapDirectionUrl: "https://maps.google.com/?q=The+Dental+Clinics+Periyar+Nagar+Chennai",
     hours: "Mon - Sat: 9:00 AM - 9:00 PM | Sun: Emergency Only",
-    isMain: true
+    isMain: true,
+    image: "/branch_periyar_nagar.jpg"
   },
   {
     id: "jawahar-nagar",
@@ -277,7 +279,8 @@ export const BRANCHES_DATA: Branch[] = [
     phone: "+91 44 3153 5314",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.6023348127395!2d80.22214!3d13.1215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265007b8b2cf1%3A0x6b801a23861c8a1d!2sJawahar%20Nagar%2C%20Chennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     mapDirectionUrl: "https://maps.google.com/?q=The+Dental+Clinics+Jawahar+Nagar+Chennai",
-    hours: "Mon - Sat: 9:30 AM - 8:30 PM"
+    hours: "Mon - Sat: 9:30 AM - 8:30 PM",
+    image: "/branch_jawahar_nagar.png"
   },
   {
     id: "thiru-vi-ka-nagar",
@@ -289,7 +292,8 @@ export const BRANCHES_DATA: Branch[] = [
     phone: "+91 70102 60934",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.55!2d80.226!3d13.125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5264fc8a8163f9%3A0xbc4e7d443229b46e!2sThiru%20Vi%20Ka%20Nagar%2C%20Chennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     mapDirectionUrl: "https://maps.google.com/?q=The+Dental+Clinics+Thiru+Vi+Ka+Nagar+Chennai",
-    hours: "Mon - Sat: 9:30 AM - 9:00 PM"
+    hours: "Mon - Sat: 9:30 AM - 9:00 PM",
+    image: "/branch_thiru_vi_ka_nagar.jpg"
   }
 ];
 
