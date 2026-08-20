@@ -122,17 +122,17 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-white relative">
                   <img
-                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
-                    alt="State-of-the-Art Dental Operatory at The Dental Clinics Chennai"
-                    className="w-full h-[420px] sm:h-[480px] object-cover"
+                    src="/branch_periyar_nagar.jpg"
+                    alt="The Dental Clinics Periyar Nagar Main Branch Building"
+                    className="w-full h-[420px] sm:h-[480px] object-cover object-center"
                     loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent" />
                   
                   <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                    <span className="text-xs text-secondary font-semibold uppercase tracking-wider">Clinical Integrity</span>
-                    <h3 className="text-xl font-heading font-bold">State-of-the-Art Dental Care</h3>
-                    <p className="text-xs text-primary-100">Ethical diagnostics, root canals, laser dentistry, and dental implants.</p>
+                    <span className="text-xs text-secondary font-semibold uppercase tracking-wider">Main Branch • Periyar Nagar</span>
+                    <h3 className="text-xl font-heading font-bold">The Dental Clinics Building</h3>
+                    <p className="text-xs text-primary-100">No. C/276, Jaganathan Salai, Periyar Nagar, Chennai</p>
                   </div>
                 </div>
 

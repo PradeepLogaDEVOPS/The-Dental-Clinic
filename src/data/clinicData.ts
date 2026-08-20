@@ -400,9 +400,9 @@ export const GALLERY_DATA: GalleryItem[] = [
   },
   {
     id: "gal-1",
-    title: "Modern Sterilization Suite",
+    title: "Periyar Nagar Main Branch Clinic Building",
     category: "Clinic Facilities",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
+    image: "/branch_periyar_nagar.jpg"
   },
   {
     id: "gal-2",
