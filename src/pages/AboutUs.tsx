@@ -85,6 +85,35 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
         </motion.div>
       </section>
 
+      {/* CLINIC AMBIANCE & RECEPTION */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl border border-clinic-border shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+        >
+          <div className="md:col-span-6 h-72 sm:h-96 relative overflow-hidden bg-clinic-section">
+            <img
+              src="/clinic_reception.jpg"
+              alt="The Dental Clinics Executive Reception and Waiting Lounge"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="md:col-span-6 p-8 sm:p-10 space-y-4">
+            <span className="text-xs font-bold uppercase tracking-wider text-secondary">
+              Warm & Welcoming Ambiance
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-clinic-dark">
+              Modern Executive Reception
+            </h2>
+            <p className="text-xs sm:text-sm text-clinic-grey leading-relaxed">
+              Designed for patient comfort and tranquility, our welcoming reception area combines serene wooden aesthetics, calming ambient lighting, and dedicated patient lounge amenities.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
       {/* MISSION, VISION & HOLISTIC CARE (H3s) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

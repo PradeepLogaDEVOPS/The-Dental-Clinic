@@ -381,6 +381,12 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 
 export const GALLERY_DATA: GalleryItem[] = [
   {
+    id: "gal-reception",
+    title: "Executive Reception & Waiting Lounge",
+    category: "Clinic Facilities",
+    image: "/clinic_reception.jpg"
+  },
+  {
     id: "gal-1",
     title: "Periyar Nagar Main Branch Clinic Building",
     category: "Clinic Facilities",
