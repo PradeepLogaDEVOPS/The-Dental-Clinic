@@ -381,6 +381,24 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 
 export const GALLERY_DATA: GalleryItem[] = [
   {
+    id: "gal-1",
+    title: "Periyar Nagar Main Branch Clinic Building",
+    category: "Clinic Facilities",
+    image: "/branch_periyar_nagar.jpg"
+  },
+  {
+    id: "gal-2",
+    title: "Jawahar Nagar Branch Clinic Building",
+    category: "Clinic Facilities",
+    image: "/branch_jawahar_nagar.png"
+  },
+  {
+    id: "gal-3",
+    title: "Thiru Vi Ka Nagar Branch Clinic Building",
+    category: "Clinic Facilities",
+    image: "/branch_thiru_vi_ka_nagar.jpg"
+  },
+  {
     id: "gal-client-1",
     title: "Oral Cancer Awareness & Tobacco Prevention",
     category: "Patient Care",
@@ -397,41 +415,5 @@ export const GALLERY_DATA: GalleryItem[] = [
     title: "Pre-Cancerous Lesions Early Detection",
     category: "Patient Care",
     image: "/precancerous_lesions.png"
-  },
-  {
-    id: "gal-1",
-    title: "Periyar Nagar Main Branch Clinic Building",
-    category: "Clinic Facilities",
-    image: "/branch_periyar_nagar.jpg"
-  },
-  {
-    id: "gal-2",
-    title: "Advanced Dental Operatory",
-    category: "Modern Equipment",
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: "gal-3",
-    title: "Digital Smile Designing Consult",
-    category: "Patient Care",
-    image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: "gal-4",
-    title: "Complete Aesthetic Smile Transformation",
-    category: "Smile Transformations",
-    image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: "gal-5",
-    title: "Pediatric Dental Corner",
-    category: "Clinic Facilities",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: "gal-6",
-    title: "Precision Dental Laser Equipment",
-    category: "Modern Equipment",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
   }
 ];
