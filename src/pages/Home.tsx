@@ -36,138 +36,140 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenBooking }) => {
       />
 
       {/* 1. HERO SECTION (SEO OPTIMIZED H1) */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white pt-10 pb-20 lg:pt-16 lg:pb-32 border-b border-primary-light/20">
+      <section className="relative w-full overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-[#0B3A63] text-white pt-8 pb-16 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-28 border-b border-primary-light/20">
         <div className="absolute top-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-primary-light/20 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content Column */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-7 space-y-6 text-left"
-            >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-white font-semibold text-xs uppercase tracking-wider border border-white/20 backdrop-blur-sm">
-                <ShieldCheck className="w-4 h-4 text-secondary" />
-                <span>Established Dental Practice • Chennai</span>
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8 relative z-10">
+          
+          {/* Left Content Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="min-w-0 space-y-6 text-left"
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/20 text-white font-semibold text-xs uppercase tracking-wider border border-white/20 backdrop-blur-sm">
+              <ShieldCheck className="w-4 h-4 text-secondary" />
+              <span>Established Dental Practice • Chennai</span>
+            </div>
+
+            {/* Primary SEO H1 Heading */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-heading font-extrabold text-white leading-[1.15] tracking-tight">
+              Comprehensive Dental <br className="hidden sm:inline" />
+              <span className="text-secondary">Healthcare & Surgery</span> <br className="hidden sm:inline" />
+              in Chennai
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-primary-100 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl">
+              The dental clinic was established by <strong className="text-white font-semibold">Dr. M. Gopalakrishnan</strong>, son of <strong className="text-white font-semibold">Dr. V. M. Nair</strong>, a medical physician. Providing ethical dental care for patients in <span className="text-secondary font-semibold">Periyar Nagar</span>, <span className="text-secondary font-semibold">Jawahar Nagar</span>, and <span className="text-secondary font-semibold">Thiru Vi Ka Nagar</span>.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+              <button
+                onClick={() => onOpenBooking()}
+                className="bg-white hover:bg-clinic-section text-primary font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-xs sm:text-base flex items-center gap-2"
+              >
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" /> Book Appointment
+              </button>
+
+              <a
+                href={`tel:${CLINIC_INFO.emergencyPhone}`}
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold py-3.5 sm:py-4 px-5 sm:px-7 rounded-full transition-all text-xs sm:text-base flex items-center gap-2 backdrop-blur-sm"
+              >
+                <Phone className="w-4 h-4 text-secondary" /> Call Now
+              </a>
+
+              <a
+                href={`https://wa.me/${CLINIC_INFO.whatsappNumber}`}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-semibold p-3.5 sm:p-4 rounded-full shadow-lg transition-all flex items-center justify-center shrink-0"
+                aria-label="Contact clinic via WhatsApp"
+              >
+                <MessageSquare className="w-5 h-5" />
+              </a>
+            </div>
+
+            {/* Trust Metrics Bar */}
+            <div className="pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-4 text-center sm:text-left">
+              <div>
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">3</div>
+                <div className="text-[11px] sm:text-xs text-primary-100 font-medium">Clinic Branches</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">BDS & MDS</div>
+                <div className="text-[11px] sm:text-xs text-primary-100 font-medium">Dental Surgeons</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">12</div>
+                <div className="text-[11px] sm:text-xs text-primary-100 font-medium">Dental Specialties</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Visual Image Column */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative flex w-full justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-[540px] lg:max-w-[580px] py-4 sm:py-6 px-2 sm:px-4">
+              
+              {/* Main Hero Image Container */}
+              <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-white relative w-full">
+                <img
+                  src="/branch_periyar_nagar.jpg"
+                  alt="The Dental Clinics Periyar Nagar Main Branch Building"
+                  className="w-full h-[360px] sm:h-[440px] lg:h-[460px] object-cover object-center"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent" />
+                
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white space-y-1">
+                  <span className="text-[11px] sm:text-xs text-secondary font-semibold uppercase tracking-wider">Main Branch • Periyar Nagar</span>
+                  <h3 className="text-lg sm:text-xl font-heading font-bold">The Dental Clinics Building</h3>
+                  <p className="text-[11px] sm:text-xs text-primary-100">No. C/276, Jaganathan Salai, Periyar Nagar, Chennai</p>
+                </div>
               </div>
 
-              {/* Primary SEO H1 Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-[1.15]">
-                Comprehensive Dental <br />
-                <span className="text-secondary">Healthcare & Surgery</span> <br />
-                in Chennai
-              </h1>
-
-              {/* Subtext */}
-              <p className="text-primary-100 text-base sm:text-lg leading-relaxed max-w-2xl">
-                The dental clinic was established by <strong className="text-white font-semibold">Dr. M. Gopalakrishnan</strong>, son of <strong className="text-white font-semibold">Dr. V. M. Nair</strong>, a medical physician. Providing ethical dental care for patients in <span className="text-secondary font-semibold">Periyar Nagar</span>, <span className="text-secondary font-semibold">Jawahar Nagar</span>, and <span className="text-secondary font-semibold">Thiru Vi Ka Nagar</span>.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => onOpenBooking()}
-                  className="bg-white hover:bg-clinic-section text-primary font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base flex items-center gap-2"
-                >
-                  <Calendar className="w-5 h-5 text-secondary" /> Book Appointment
-                </button>
-
-                <a
-                  href={`tel:${CLINIC_INFO.emergencyPhone}`}
-                  className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold py-4 px-7 rounded-full transition-all text-sm sm:text-base flex items-center gap-2 backdrop-blur-sm"
-                >
-                  <Phone className="w-4 h-4 text-secondary" /> Call Now
-                </a>
-
-                <a
-                  href={`https://wa.me/${CLINIC_INFO.whatsappNumber}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-semibold p-4 rounded-full shadow-lg transition-all flex items-center justify-center"
-                  aria-label="Contact clinic via WhatsApp"
-                >
-                  <MessageSquare className="w-5 h-5" />
-                </a>
-              </div>
-
-              {/* Trust Metrics Bar */}
-              <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center sm:text-left">
-                <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">3</div>
-                  <div className="text-xs text-primary-100 font-medium">Clinic Branches</div>
+              {/* Floating Doctor Badge */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -top-1 left-0 sm:top-2 sm:left-2 bg-white/95 backdrop-blur-md text-clinic-dark rounded-2xl p-2.5 sm:p-3.5 shadow-xl border border-clinic-border flex items-center gap-2.5 sm:gap-3 max-w-[200px] sm:max-w-[230px] z-20"
+              >
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary shrink-0">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">BDS & MDS</div>
-                  <div className="text-xs text-primary-100 font-medium">Dental Surgeons</div>
+                  <div className="text-[11px] sm:text-xs font-bold text-primary">Dr. M. Gopalakrishnan</div>
+                  <div className="text-[10px] sm:text-[11px] text-clinic-grey">Established Practice</div>
+                </div>
+              </motion.div>
+
+              {/* Floating Locations Badge */}
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -bottom-1 right-0 sm:bottom-2 sm:right-2 bg-white/95 backdrop-blur-md text-clinic-dark rounded-2xl p-2.5 sm:p-3.5 shadow-xl border border-clinic-border flex items-center gap-2.5 sm:gap-3 z-20"
+              >
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-secondary">12</div>
-                  <div className="text-xs text-primary-100 font-medium">Dental Specialties</div>
+                  <div className="text-[11px] sm:text-xs font-bold text-primary">3 Locations in Chennai</div>
+                  <div className="text-[10px] sm:text-[11px] text-clinic-grey">Periyar, Jawahar & Thiru Vi Ka</div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Right Visual Image Column */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:col-span-5 relative"
-            >
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-white relative">
-                  <img
-                    src="/branch_periyar_nagar.jpg"
-                    alt="The Dental Clinics Periyar Nagar Main Branch Building"
-                    className="w-full h-[420px] sm:h-[480px] object-cover object-center"
-                    loading="eager"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent" />
-                  
-                  <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                    <span className="text-xs text-secondary font-semibold uppercase tracking-wider">Main Branch • Periyar Nagar</span>
-                    <h3 className="text-xl font-heading font-bold">The Dental Clinics Building</h3>
-                    <p className="text-xs text-primary-100">No. C/276, Jaganathan Salai, Periyar Nagar, Chennai</p>
-                  </div>
-                </div>
+            </div>
+          </motion.div>
 
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-4 left-4 bg-white/95 backdrop-blur-md text-clinic-dark rounded-2xl p-3 sm:p-4 shadow-xl border border-clinic-border hidden sm:flex items-center gap-3 max-w-[220px] z-10"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary shrink-0">
-                    <Award className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-primary">Dr. M. Gopalakrishnan</div>
-                    <div className="text-[11px] text-clinic-grey">Established Dental Practice</div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md text-clinic-dark rounded-2xl p-3 sm:p-4 shadow-xl border border-clinic-border hidden sm:flex items-center gap-3 z-10"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-primary">3 Locations in Chennai</div>
-                    <div className="text-[11px] text-clinic-grey">Periyar, Jawahar & Thiru Vi Ka Nagar</div>
-                  </div>
-                </motion.div>
-
-              </div>
-            </motion.div>
-
-          </div>
         </div>
       </section>
 

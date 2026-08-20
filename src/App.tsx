@@ -44,7 +44,7 @@ export function App() {
       />
 
       {/* Page View Switcher */}
-      <main className="flex-grow">
+      <main className="flex-grow w-full overflow-x-hidden min-w-0">
         {activeTab === 'home' && (
           <Home setActiveTab={setActiveTab} onOpenBooking={handleOpenBooking} />
         )}
